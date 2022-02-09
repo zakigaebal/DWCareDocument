@@ -19,17 +19,21 @@ namespace DWCareDocument
 
       DateTime dateStart = DateTime.Now.AddDays(1 - DateTime.Now.Day);
       datetimepickeStart.Value = dateStart;
+			string selectQuery = "SELECT * FROM dawoon.dc_caredocument";
+			연결(selectQuery);
+			comboBoxNumber.SelectedIndex = 0;
 		}
 
-		private void 연결(string selectQuery, string account)
+		private void 연결(string selectQuery)
 		{
 
-			selectQuery = "SELECT * FROM dawoon.dc_items where flagYN = 'Y';";
+			selectQuery = "SELECT * FROM dawoon.dc_caredocument where flagYN = 'Y';";
 			connection.Open();
 			MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
 			MySqlDataReader reader = cmd.ExecuteReader();
 			while (reader.Read())
 			{
+				comboBoxNumber.Items.Add(reader.GetString("number"));
 			}
 			connection.Close();
 		}
@@ -125,8 +129,6 @@ namespace DWCareDocument
 
 		}
 
-		
-
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
 				if(textBoxTime.Text == "")
@@ -134,11 +136,14 @@ namespace DWCareDocument
 				MessageBox.Show("시간을 입력하세요");
 				return;
 			}
+
+
+
 			try
 			{
 				string QuerySave = "insert into dawoon.dc_caredocument(careSeq,number,careStart,careFinish,time,sympton,count,injection,oral,age,birth,memo,flagYN,regDate,issueDate,issueID) values('"
 				+ seqCount() + "','"
-				+ textBoxNumber.Text + "','"
+				+ comboBoxNumber.Text + "','"
 				+ datetimepickeStart.Text + "','"
 				+ dateTimePickerEnd.Text + "','"
 				+ textBoxTime.Text + "','"
@@ -150,14 +155,58 @@ namespace DWCareDocument
 				+ dateTimePickerBirth.Text + "','"
 				+ textBoxMemo.Text
 				+ "','Y',now(),now(),'CDY');";
-
 				CrudSql(QuerySave, "저장완료");
 				buttonSearch_Click(sender, e);
 			}
+
 			catch(Exception ex)
 			{
 
 			}
+		}
+
+		private void textBoxTime_TextChanged(object sender, EventArgs e)
+		{
+			string prevValue = string.Empty;
+			TextBox textBox = sender as TextBox;
+
+			string text = textBox.Text.Replace(",", ""); // 입력되는 텍스트들의 ','를 전부 삭제하기
+
+			long num = 0;
+			if (long.TryParse(text, out num))//숫자형태의 값일 때만 처리
+			{
+			
+				textBox.SelectionStart = textBox.TextLength;//커서를 항상 글자 제일 뒤로 위치시킴
+				textBox.SelectionLength = 0;
+			}
+			else
+			{
+				textBox.Text = prevValue;//숫자형태의 값이 아니면 이전값으로 설정
+			}
+
+			prevValue = textBox.Text;
+		}
+
+		private void textBoxCount_TextChanged(object sender, EventArgs e)
+		{
+			string prevValue = string.Empty;
+			TextBox textBox = sender as TextBox;
+
+			string text = textBox.Text.Replace(",", ""); // 입력되는 텍스트들의 ','를 전부 삭제하기
+
+			long num = 0;
+			if (long.TryParse(text, out num))//숫자형태의 값일 때만 처리
+			{
+
+				textBox.SelectionStart = textBox.TextLength;//커서를 항상 글자 제일 뒤로 위치시킴
+				textBox.SelectionLength = 0;
+			}
+			else
+			{
+				textBox.Text = prevValue;//숫자형태의 값이 아니면 이전값으로 설정
+			}
+
+			prevValue = textBox.Text;
 		}
 	}
 }

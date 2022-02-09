@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.label13 = new System.Windows.Forms.Label();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanelInput = new System.Windows.Forms.TableLayoutPanel();
+			this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+			this.datetimepickeStart = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -38,41 +43,36 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
-			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.textBox7 = new System.Windows.Forms.TextBox();
-			this.textBox8 = new System.Windows.Forms.TextBox();
-			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.textBoxTime = new System.Windows.Forms.TextBox();
+			this.textBoxSympton = new System.Windows.Forms.TextBox();
+			this.textBoxCount = new System.Windows.Forms.TextBox();
+			this.textBoxInjection = new System.Windows.Forms.TextBox();
+			this.textBoxOral = new System.Windows.Forms.TextBox();
+			this.textBoxMemo = new System.Windows.Forms.TextBox();
 			this.panelInput = new System.Windows.Forms.Panel();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
-			this.textBox9 = new System.Windows.Forms.TextBox();
-			this.panelSearch = new System.Windows.Forms.Panel();
-			this.label12 = new System.Windows.Forms.Label();
-			this.textBoxSearch = new System.Windows.Forms.TextBox();
-			this.buttonSearch = new System.Windows.Forms.Button();
-			this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.textBox11 = new System.Windows.Forms.TextBox();
-			this.textBox12 = new System.Windows.Forms.TextBox();
 			this.tableLayoutPanelCRUD = new System.Windows.Forms.TableLayoutPanel();
 			this.buttonDelete = new System.Windows.Forms.Button();
 			this.buttonModify = new System.Windows.Forms.Button();
 			this.buttonSave = new System.Windows.Forms.Button();
-			this.label13 = new System.Windows.Forms.Label();
-			this.datetimepickeStart = new System.Windows.Forms.DateTimePicker();
-			this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+			this.textBoxAge = new System.Windows.Forms.TextBox();
+			this.textBoxNumber = new System.Windows.Forms.TextBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.panelSearch = new System.Windows.Forms.Panel();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
+			this.buttonSearch = new System.Windows.Forms.Button();
+			this.textBoxSearch = new System.Windows.Forms.TextBox();
+			this.label12 = new System.Windows.Forms.Label();
+			this.dateTimePickerBirth = new System.Windows.Forms.DateTimePicker();
 			this.tableLayoutPanel1.SuspendLayout();
-			this.tableLayoutPanelInput.SuspendLayout();
-			this.tableLayoutPanel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.tableLayoutPanel4.SuspendLayout();
+			this.tableLayoutPanelInput.SuspendLayout();
 			this.panelInput.SuspendLayout();
-			this.panelSearch.SuspendLayout();
 			this.tableLayoutPanelCRUD.SuspendLayout();
+			this.panelSearch.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -94,6 +94,45 @@
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1318, 505);
 			this.tableLayoutPanel1.TabIndex = 1;
 			// 
+			// label13
+			// 
+			this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label13.AutoSize = true;
+			this.label13.Location = new System.Drawing.Point(252, 38);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(137, 12);
+			this.label13.TabIndex = 13;
+			this.label13.Text = "질병 치료 대장 프로그램";
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AllowUserToAddRows = false;
+			this.dataGridView1.AllowUserToDeleteRows = false;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView1.Location = new System.Drawing.Point(645, 92);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
+			this.dataGridView1.RowTemplate.Height = 23;
+			this.dataGridView1.Size = new System.Drawing.Size(670, 410);
+			this.dataGridView1.TabIndex = 11;
+			// 
+			// tableLayoutPanel4
+			// 
+			this.tableLayoutPanel4.ColumnCount = 2;
+			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.97727F));
+			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.02273F));
+			this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanelInput, 0, 0);
+			this.tableLayoutPanel4.Controls.Add(this.panelInput, 1, 0);
+			this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 92);
+			this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+			this.tableLayoutPanel4.RowCount = 1;
+			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 410F));
+			this.tableLayoutPanel4.Size = new System.Drawing.Size(636, 410);
+			this.tableLayoutPanel4.TabIndex = 6;
+			// 
 			// tableLayoutPanelInput
 			// 
 			this.tableLayoutPanelInput.ColumnCount = 2;
@@ -109,12 +148,12 @@
 			this.tableLayoutPanelInput.Controls.Add(this.label6, 0, 5);
 			this.tableLayoutPanelInput.Controls.Add(this.label7, 0, 6);
 			this.tableLayoutPanelInput.Controls.Add(this.label8, 0, 7);
-			this.tableLayoutPanelInput.Controls.Add(this.textBox3, 1, 2);
-			this.tableLayoutPanelInput.Controls.Add(this.textBox4, 1, 3);
-			this.tableLayoutPanelInput.Controls.Add(this.textBox5, 1, 4);
-			this.tableLayoutPanelInput.Controls.Add(this.textBox6, 1, 5);
-			this.tableLayoutPanelInput.Controls.Add(this.textBox7, 1, 6);
-			this.tableLayoutPanelInput.Controls.Add(this.textBox8, 1, 7);
+			this.tableLayoutPanelInput.Controls.Add(this.textBoxTime, 1, 2);
+			this.tableLayoutPanelInput.Controls.Add(this.textBoxSympton, 1, 3);
+			this.tableLayoutPanelInput.Controls.Add(this.textBoxCount, 1, 4);
+			this.tableLayoutPanelInput.Controls.Add(this.textBoxInjection, 1, 5);
+			this.tableLayoutPanelInput.Controls.Add(this.textBoxOral, 1, 6);
+			this.tableLayoutPanelInput.Controls.Add(this.textBoxMemo, 1, 7);
 			this.tableLayoutPanelInput.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanelInput.Location = new System.Drawing.Point(3, 3);
 			this.tableLayoutPanelInput.Name = "tableLayoutPanelInput";
@@ -129,6 +168,30 @@
 			this.tableLayoutPanelInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95F));
 			this.tableLayoutPanelInput.Size = new System.Drawing.Size(305, 404);
 			this.tableLayoutPanelInput.TabIndex = 4;
+			// 
+			// dateTimePickerEnd
+			// 
+			this.dateTimePickerEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.dateTimePickerEnd.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateTimePickerEnd.Location = new System.Drawing.Point(146, 64);
+			this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+			this.dateTimePickerEnd.Size = new System.Drawing.Size(135, 29);
+			this.dateTimePickerEnd.TabIndex = 27;
+			this.dateTimePickerEnd.Value = new System.DateTime(2022, 2, 7, 0, 0, 0, 0);
+			// 
+			// datetimepickeStart
+			// 
+			this.datetimepickeStart.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.datetimepickeStart.CalendarFont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.datetimepickeStart.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.datetimepickeStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.datetimepickeStart.Location = new System.Drawing.Point(146, 12);
+			this.datetimepickeStart.Name = "datetimepickeStart";
+			this.datetimepickeStart.Size = new System.Drawing.Size(135, 29);
+			this.datetimepickeStart.TabIndex = 26;
+			this.datetimepickeStart.Value = new System.DateTime(2022, 2, 7, 0, 0, 0, 0);
 			// 
 			// label1
 			// 
@@ -210,90 +273,61 @@
 			this.label8.TabIndex = 7;
 			this.label8.Text = "메모";
 			// 
-			// textBox3
+			// textBoxTime
 			// 
-			this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox3.Location = new System.Drawing.Point(164, 113);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(100, 21);
-			this.textBox3.TabIndex = 10;
+			this.textBoxTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.textBoxTime.Location = new System.Drawing.Point(164, 113);
+			this.textBoxTime.Name = "textBoxTime";
+			this.textBoxTime.Size = new System.Drawing.Size(100, 21);
+			this.textBoxTime.TabIndex = 10;
 			// 
-			// textBox4
+			// textBoxSympton
 			// 
-			this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox4.Location = new System.Drawing.Point(164, 154);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(100, 21);
-			this.textBox4.TabIndex = 11;
+			this.textBoxSympton.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.textBoxSympton.Location = new System.Drawing.Point(164, 154);
+			this.textBoxSympton.Name = "textBoxSympton";
+			this.textBoxSympton.Size = new System.Drawing.Size(100, 21);
+			this.textBoxSympton.TabIndex = 11;
 			// 
-			// textBox5
+			// textBoxCount
 			// 
-			this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox5.Location = new System.Drawing.Point(164, 193);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(100, 21);
-			this.textBox5.TabIndex = 12;
+			this.textBoxCount.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.textBoxCount.Location = new System.Drawing.Point(164, 193);
+			this.textBoxCount.Name = "textBoxCount";
+			this.textBoxCount.Size = new System.Drawing.Size(100, 21);
+			this.textBoxCount.TabIndex = 12;
 			// 
-			// textBox6
+			// textBoxInjection
 			// 
-			this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox6.Location = new System.Drawing.Point(164, 233);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(100, 21);
-			this.textBox6.TabIndex = 13;
+			this.textBoxInjection.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.textBoxInjection.Location = new System.Drawing.Point(164, 233);
+			this.textBoxInjection.Name = "textBoxInjection";
+			this.textBoxInjection.Size = new System.Drawing.Size(100, 21);
+			this.textBoxInjection.TabIndex = 13;
 			// 
-			// textBox7
+			// textBoxOral
 			// 
-			this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox7.Location = new System.Drawing.Point(164, 276);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(100, 21);
-			this.textBox7.TabIndex = 14;
+			this.textBoxOral.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.textBoxOral.Location = new System.Drawing.Point(164, 276);
+			this.textBoxOral.Name = "textBoxOral";
+			this.textBoxOral.Size = new System.Drawing.Size(100, 21);
+			this.textBoxOral.TabIndex = 14;
 			// 
-			// textBox8
+			// textBoxMemo
 			// 
-			this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox8.Location = new System.Drawing.Point(126, 311);
-			this.textBox8.Multiline = true;
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(176, 90);
-			this.textBox8.TabIndex = 15;
-			// 
-			// tableLayoutPanel4
-			// 
-			this.tableLayoutPanel4.ColumnCount = 2;
-			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.97727F));
-			this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.02273F));
-			this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanelInput, 0, 0);
-			this.tableLayoutPanel4.Controls.Add(this.panelInput, 1, 0);
-			this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 92);
-			this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-			this.tableLayoutPanel4.RowCount = 1;
-			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel4.Size = new System.Drawing.Size(636, 410);
-			this.tableLayoutPanel4.TabIndex = 6;
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView1.Location = new System.Drawing.Point(645, 92);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.RowTemplate.Height = 23;
-			this.dataGridView1.Size = new System.Drawing.Size(670, 410);
-			this.dataGridView1.TabIndex = 11;
+			this.textBoxMemo.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.textBoxMemo.Location = new System.Drawing.Point(126, 311);
+			this.textBoxMemo.Multiline = true;
+			this.textBoxMemo.Name = "textBoxMemo";
+			this.textBoxMemo.Size = new System.Drawing.Size(176, 90);
+			this.textBoxMemo.TabIndex = 15;
 			// 
 			// panelInput
 			// 
+			this.panelInput.Controls.Add(this.dateTimePickerBirth);
 			this.panelInput.Controls.Add(this.tableLayoutPanelCRUD);
-			this.panelInput.Controls.Add(this.textBox12);
-			this.panelInput.Controls.Add(this.textBox11);
-			this.panelInput.Controls.Add(this.textBox9);
+			this.panelInput.Controls.Add(this.textBoxAge);
+			this.panelInput.Controls.Add(this.textBoxNumber);
 			this.panelInput.Controls.Add(this.label11);
 			this.panelInput.Controls.Add(this.label10);
 			this.panelInput.Controls.Add(this.label9);
@@ -302,114 +336,6 @@
 			this.panelInput.Name = "panelInput";
 			this.panelInput.Size = new System.Drawing.Size(319, 404);
 			this.panelInput.TabIndex = 5;
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(67, 56);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(53, 12);
-			this.label9.TabIndex = 1;
-			this.label9.Text = "개체번호";
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(67, 102);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(29, 12);
-			this.label10.TabIndex = 2;
-			this.label10.Text = "일령";
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(67, 160);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(53, 12);
-			this.label11.TabIndex = 3;
-			this.label11.Text = "생년월일";
-			// 
-			// textBox9
-			// 
-			this.textBox9.Location = new System.Drawing.Point(179, 53);
-			this.textBox9.Name = "textBox9";
-			this.textBox9.Size = new System.Drawing.Size(100, 21);
-			this.textBox9.TabIndex = 9;
-			// 
-			// panelSearch
-			// 
-			this.panelSearch.Controls.Add(this.checkBox2);
-			this.panelSearch.Controls.Add(this.checkBoxDelShow);
-			this.panelSearch.Controls.Add(this.buttonSearch);
-			this.panelSearch.Controls.Add(this.textBoxSearch);
-			this.panelSearch.Controls.Add(this.label12);
-			this.panelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelSearch.Location = new System.Drawing.Point(645, 3);
-			this.panelSearch.Name = "panelSearch";
-			this.panelSearch.Size = new System.Drawing.Size(670, 83);
-			this.panelSearch.TabIndex = 12;
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(33, 31);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(77, 12);
-			this.label12.TabIndex = 2;
-			this.label12.Text = "등록개체 수 :";
-			// 
-			// textBoxSearch
-			// 
-			this.textBoxSearch.Location = new System.Drawing.Point(123, 28);
-			this.textBoxSearch.Name = "textBoxSearch";
-			this.textBoxSearch.Size = new System.Drawing.Size(100, 21);
-			this.textBoxSearch.TabIndex = 10;
-			// 
-			// buttonSearch
-			// 
-			this.buttonSearch.Dock = System.Windows.Forms.DockStyle.Right;
-			this.buttonSearch.Location = new System.Drawing.Point(539, 0);
-			this.buttonSearch.Name = "buttonSearch";
-			this.buttonSearch.Size = new System.Drawing.Size(131, 83);
-			this.buttonSearch.TabIndex = 13;
-			this.buttonSearch.Text = "조회";
-			this.buttonSearch.UseVisualStyleBackColor = true;
-			this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-			// 
-			// checkBoxDelShow
-			// 
-			this.checkBoxDelShow.AutoSize = true;
-			this.checkBoxDelShow.Location = new System.Drawing.Point(434, 9);
-			this.checkBoxDelShow.Name = "checkBoxDelShow";
-			this.checkBoxDelShow.Size = new System.Drawing.Size(76, 16);
-			this.checkBoxDelShow.TabIndex = 14;
-			this.checkBoxDelShow.Text = "출하 제외";
-			this.checkBoxDelShow.UseVisualStyleBackColor = true;
-			// 
-			// checkBox2
-			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.Location = new System.Drawing.Point(434, 44);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(76, 16);
-			this.checkBox2.TabIndex = 15;
-			this.checkBox2.Text = "44군 제외";
-			this.checkBox2.UseVisualStyleBackColor = true;
-			// 
-			// textBox11
-			// 
-			this.textBox11.Location = new System.Drawing.Point(179, 102);
-			this.textBox11.Name = "textBox11";
-			this.textBox11.Size = new System.Drawing.Size(100, 21);
-			this.textBox11.TabIndex = 10;
-			// 
-			// textBox12
-			// 
-			this.textBox12.Location = new System.Drawing.Point(179, 157);
-			this.textBox12.Name = "textBox12";
-			this.textBox12.Size = new System.Drawing.Size(100, 21);
-			this.textBox12.TabIndex = 11;
 			// 
 			// tableLayoutPanelCRUD
 			// 
@@ -462,39 +388,118 @@
 			this.buttonSave.UseVisualStyleBackColor = true;
 			this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
 			// 
-			// label13
+			// textBoxAge
 			// 
-			this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(252, 38);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(137, 12);
-			this.label13.TabIndex = 13;
-			this.label13.Text = "질병 치료 대장 프로그램";
+			this.textBoxAge.Location = new System.Drawing.Point(179, 102);
+			this.textBoxAge.Name = "textBoxAge";
+			this.textBoxAge.Size = new System.Drawing.Size(100, 21);
+			this.textBoxAge.TabIndex = 10;
 			// 
-			// datetimepickeStart
+			// textBoxNumber
 			// 
-			this.datetimepickeStart.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.datetimepickeStart.CalendarFont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.datetimepickeStart.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.datetimepickeStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.datetimepickeStart.Location = new System.Drawing.Point(146, 12);
-			this.datetimepickeStart.Name = "datetimepickeStart";
-			this.datetimepickeStart.Size = new System.Drawing.Size(135, 29);
-			this.datetimepickeStart.TabIndex = 26;
-			this.datetimepickeStart.Value = new System.DateTime(2022, 2, 7, 0, 0, 0, 0);
+			this.textBoxNumber.Location = new System.Drawing.Point(179, 53);
+			this.textBoxNumber.Name = "textBoxNumber";
+			this.textBoxNumber.Size = new System.Drawing.Size(100, 21);
+			this.textBoxNumber.TabIndex = 9;
 			// 
-			// dateTimePickerEnd
+			// label11
 			// 
-			this.dateTimePickerEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.dateTimePickerEnd.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePickerEnd.Location = new System.Drawing.Point(146, 64);
-			this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-			this.dateTimePickerEnd.Size = new System.Drawing.Size(135, 29);
-			this.dateTimePickerEnd.TabIndex = 27;
-			this.dateTimePickerEnd.Value = new System.DateTime(2022, 2, 7, 0, 0, 0, 0);
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(67, 160);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(53, 12);
+			this.label11.TabIndex = 3;
+			this.label11.Text = "생년월일";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(67, 102);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(29, 12);
+			this.label10.TabIndex = 2;
+			this.label10.Text = "일령";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(67, 56);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(53, 12);
+			this.label9.TabIndex = 1;
+			this.label9.Text = "개체번호";
+			// 
+			// panelSearch
+			// 
+			this.panelSearch.Controls.Add(this.checkBox2);
+			this.panelSearch.Controls.Add(this.checkBoxDelShow);
+			this.panelSearch.Controls.Add(this.buttonSearch);
+			this.panelSearch.Controls.Add(this.textBoxSearch);
+			this.panelSearch.Controls.Add(this.label12);
+			this.panelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelSearch.Location = new System.Drawing.Point(645, 3);
+			this.panelSearch.Name = "panelSearch";
+			this.panelSearch.Size = new System.Drawing.Size(670, 83);
+			this.panelSearch.TabIndex = 12;
+			// 
+			// checkBox2
+			// 
+			this.checkBox2.AutoSize = true;
+			this.checkBox2.Location = new System.Drawing.Point(434, 44);
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.Size = new System.Drawing.Size(76, 16);
+			this.checkBox2.TabIndex = 15;
+			this.checkBox2.Text = "44군 제외";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
+			// checkBoxDelShow
+			// 
+			this.checkBoxDelShow.AutoSize = true;
+			this.checkBoxDelShow.Location = new System.Drawing.Point(434, 9);
+			this.checkBoxDelShow.Name = "checkBoxDelShow";
+			this.checkBoxDelShow.Size = new System.Drawing.Size(76, 16);
+			this.checkBoxDelShow.TabIndex = 14;
+			this.checkBoxDelShow.Text = "출하 제외";
+			this.checkBoxDelShow.UseVisualStyleBackColor = true;
+			// 
+			// buttonSearch
+			// 
+			this.buttonSearch.Dock = System.Windows.Forms.DockStyle.Right;
+			this.buttonSearch.Location = new System.Drawing.Point(539, 0);
+			this.buttonSearch.Name = "buttonSearch";
+			this.buttonSearch.Size = new System.Drawing.Size(131, 83);
+			this.buttonSearch.TabIndex = 13;
+			this.buttonSearch.Text = "조회";
+			this.buttonSearch.UseVisualStyleBackColor = true;
+			this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+			// 
+			// textBoxSearch
+			// 
+			this.textBoxSearch.Location = new System.Drawing.Point(123, 28);
+			this.textBoxSearch.Name = "textBoxSearch";
+			this.textBoxSearch.Size = new System.Drawing.Size(100, 21);
+			this.textBoxSearch.TabIndex = 10;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(33, 31);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(77, 12);
+			this.label12.TabIndex = 2;
+			this.label12.Text = "등록개체 수 :";
+			// 
+			// dateTimePickerBirth
+			// 
+			this.dateTimePickerBirth.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.dateTimePickerBirth.CalendarFont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.dateTimePickerBirth.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.dateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateTimePickerBirth.Location = new System.Drawing.Point(179, 154);
+			this.dateTimePickerBirth.Name = "dateTimePickerBirth";
+			this.dateTimePickerBirth.Size = new System.Drawing.Size(135, 29);
+			this.dateTimePickerBirth.TabIndex = 28;
+			this.dateTimePickerBirth.Value = new System.DateTime(2022, 2, 7, 0, 0, 0, 0);
 			// 
 			// Form1
 			// 
@@ -507,15 +512,15 @@
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.tableLayoutPanel4.ResumeLayout(false);
 			this.tableLayoutPanelInput.ResumeLayout(false);
 			this.tableLayoutPanelInput.PerformLayout();
-			this.tableLayoutPanel4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.panelInput.ResumeLayout(false);
 			this.panelInput.PerformLayout();
+			this.tableLayoutPanelCRUD.ResumeLayout(false);
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
-			this.tableLayoutPanelCRUD.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
@@ -534,14 +539,14 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox5;
-		private System.Windows.Forms.TextBox textBox6;
-		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.TextBox textBox8;
+		private System.Windows.Forms.TextBox textBoxTime;
+		private System.Windows.Forms.TextBox textBoxSympton;
+		private System.Windows.Forms.TextBox textBoxCount;
+		private System.Windows.Forms.TextBox textBoxInjection;
+		private System.Windows.Forms.TextBox textBoxOral;
+		private System.Windows.Forms.TextBox textBoxMemo;
 		private System.Windows.Forms.Panel panelInput;
-		private System.Windows.Forms.TextBox textBox9;
+		private System.Windows.Forms.TextBox textBoxNumber;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;
@@ -558,8 +563,8 @@
 		private System.Windows.Forms.Button buttonDelete;
 		private System.Windows.Forms.Button buttonModify;
 		private System.Windows.Forms.Button buttonSave;
-		private System.Windows.Forms.TextBox textBox12;
-		private System.Windows.Forms.TextBox textBox11;
+		private System.Windows.Forms.TextBox textBoxAge;
+		private System.Windows.Forms.DateTimePicker dateTimePickerBirth;
 	}
 }
 

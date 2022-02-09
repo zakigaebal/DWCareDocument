@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace DWCareDocument
 {
-    public partial class Form1 : Form
+	public partial class Form1 : Form
     {
 				MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8");
 		public Form1()
@@ -91,45 +85,18 @@ namespace DWCareDocument
 		
 			string field = "";
 			string flagYN = "";
-			string Query2 = "SELECT 가계부.accSeq," +
-				 " 가계부.usedDate," +
-				 " 항목.acount," +
-				 " 항목.subject," +
-				 " 가계부.money," +
-				 " 가계부.content," +
-				 " 가계부.memo," +
-				 " 가계부.flagYN," +
-				 " 가계부.regDate," +
-				 " 가계부.issueDate," +
-				 " 가계부.issueID" +
-				 " FROM dc_account 가계부" +
-				 " RIGHT JOIN dc_items 항목 ON (가계부.subject = 항목.subject) WHERE '" + field + "'" + " like '%" + searchtext + "'% AND " + flagYN;
-
-	
-
+			string Query2 = "";
 			if (checkBoxDelShow.Checked == true)
 			{
-				flagYN = "가계부.flagYN = 'N'";
+				flagYN = "flagYN = 'N'";
 			}
 			else
 			{
-				flagYN = "가계부.flagYN = 'Y'";
+				flagYN = "flagYN = 'Y'";
 			}
 			// SELECT  accSeq, usedDate, dc_items.acount, dc_items.itemSeq, dc_items.subject, money, content, memo, dc_items.flagYN, dc_items.regDate, dc_items.issueDate, dc_items.issueID FROM dc_account LEFT JOIN dc_items ON dc_account.subject = dc_items.subject;
 
-			Query2 = "SELECT 가계부.accSeq," +
-				 " 가계부.usedDate," +
-				 " 항목.acount," +
-				 " 항목.subject," +
-				 " 가계부.money," +
-				 " 가계부.content," +
-				 " 가계부.memo," +
-				 " 가계부.flagYN," +
-				 " 가계부.regDate," +
-				 " 가계부.issueDate," +
-				 " 가계부.issueID" +
-				 " FROM dc_account 가계부" +
-				 " RIGHT JOIN dc_items 항목 ON (가계부.subject = 항목.subject) WHERE "  + flagYN;
+			Query2 = "SELECT * FROM dc_caredocument WHERE " + flagYN;
 			//  + field + "like '%" + searchtext + "'% AND " + flagYN;
 			//  " RIGHT JOIN dc_items 항목 ON (가계부.subject = 항목.subject) WHERE " + flagYN;
 			MySqlConnection con = new MySqlConnection(Connect);
@@ -155,11 +122,42 @@ namespace DWCareDocument
 			dataGridView1.Columns[9].HeaderText = "일령";
 			dataGridView1.Columns[10].HeaderText = "생년월일";
 			dataGridView1.Columns[11].HeaderText = "메모";
+
 		}
+
+		
 
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
-				
+				if(textBoxTime.Text == "")
+			{
+				MessageBox.Show("시간을 입력하세요");
+				return;
+			}
+			try
+			{
+				string QuerySave = "insert into dawoon.dc_caredocument(careSeq,number,careStart,careFinish,time,sympton,count,injection,oral,age,birth,memo,flagYN,regDate,issueDate,issueID) values('"
+				+ seqCount() + "','"
+				+ textBoxNumber.Text + "','"
+				+ datetimepickeStart.Text + "','"
+				+ dateTimePickerEnd.Text + "','"
+				+ textBoxTime.Text + "','"
+				+ textBoxSympton.Text + "','"
+				+ textBoxCount.Text + "','"
+				+ textBoxInjection.Text + "','"
+				+ textBoxOral.Text + "','"
+				+ textBoxAge.Text + "','"
+				+ dateTimePickerBirth.Text + "','"
+				+ textBoxMemo.Text
+				+ "','Y',now(),now(),'CDY');";
+
+				CrudSql(QuerySave, "저장완료");
+				buttonSearch_Click(sender, e);
+			}
+			catch(Exception ex)
+			{
+
+			}
 		}
 	}
 }

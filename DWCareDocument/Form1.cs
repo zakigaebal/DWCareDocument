@@ -48,7 +48,7 @@ namespace DWCareDocument
 			MessageBox.Show(메세지);
 			con.Close();
 		}
-
+		//a
 		private string seqCount()
 		{
 			try

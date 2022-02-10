@@ -50,6 +50,7 @@
 			this.textBoxOral = new System.Windows.Forms.TextBox();
 			this.textBoxMemo = new System.Windows.Forms.TextBox();
 			this.panelInput = new System.Windows.Forms.Panel();
+			this.comboBoxNumber = new System.Windows.Forms.ComboBox();
 			this.dateTimePickerBirth = new System.Windows.Forms.DateTimePicker();
 			this.tableLayoutPanelCRUD = new System.Windows.Forms.TableLayoutPanel();
 			this.buttonDelete = new System.Windows.Forms.Button();
@@ -65,7 +66,6 @@
 			this.buttonSearch = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
-			this.comboBoxNumber = new System.Windows.Forms.ComboBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tableLayoutPanel4.SuspendLayout();
@@ -116,6 +116,7 @@
 			this.dataGridView1.RowTemplate.Height = 23;
 			this.dataGridView1.Size = new System.Drawing.Size(670, 430);
 			this.dataGridView1.TabIndex = 11;
+			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
 			// tableLayoutPanel4
 			// 
@@ -342,6 +343,15 @@
 			this.panelInput.Size = new System.Drawing.Size(319, 424);
 			this.panelInput.TabIndex = 5;
 			// 
+			// comboBoxNumber
+			// 
+			this.comboBoxNumber.FormattingEnabled = true;
+			this.comboBoxNumber.Location = new System.Drawing.Point(179, 53);
+			this.comboBoxNumber.Name = "comboBoxNumber";
+			this.comboBoxNumber.Size = new System.Drawing.Size(121, 20);
+			this.comboBoxNumber.TabIndex = 29;
+			this.comboBoxNumber.SelectedIndexChanged += new System.EventHandler(this.comboBoxNumber_SelectedIndexChanged);
+			// 
 			// dateTimePickerBirth
 			// 
 			this.dateTimePickerBirth.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -498,14 +508,6 @@
 			this.label12.Size = new System.Drawing.Size(77, 12);
 			this.label12.TabIndex = 2;
 			this.label12.Text = "등록개체 수 :";
-			// 
-			// comboBoxNumber
-			// 
-			this.comboBoxNumber.FormattingEnabled = true;
-			this.comboBoxNumber.Location = new System.Drawing.Point(179, 53);
-			this.comboBoxNumber.Name = "comboBoxNumber";
-			this.comboBoxNumber.Size = new System.Drawing.Size(121, 20);
-			this.comboBoxNumber.TabIndex = 29;
 			// 
 			// Form1
 			// 

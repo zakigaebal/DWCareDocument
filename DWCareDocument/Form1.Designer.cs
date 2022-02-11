@@ -415,6 +415,7 @@
 			this.buttonSave.TabIndex = 0;
 			this.buttonSave.Text = "저장";
 			this.buttonSave.UseVisualStyleBackColor = true;
+			this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
 			// 
 			// comboBoxNumber
 			// 

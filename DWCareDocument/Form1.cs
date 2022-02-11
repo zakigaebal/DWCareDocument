@@ -50,7 +50,6 @@ namespace DWCareDocument
 			MessageBox.Show(메세지);
 			con.Close();
 		}
-		
 		private string seqCount()
 		{
 			try
@@ -93,7 +92,6 @@ namespace DWCareDocument
 					{
 						flagYN = "flagYN = 'N'";
 					}
-
 					else
 					{
 						flagYN = "flagYN = 'Y'";
@@ -130,8 +128,6 @@ namespace DWCareDocument
 				textBoxAge.Text = remain.Days.ToString();
 			}
 			rdr.Close();
-
-	
 			MySqlCommand CommNumber2 = new MySqlCommand(Query4, con);
 			MySqlDataReader rdr2 = CommNumber2.ExecuteReader();
 			while (rdr2.Read())
@@ -163,12 +159,7 @@ namespace DWCareDocument
 					dataGridView1.Columns[9].HeaderText = "일령";
 					dataGridView1.Columns[10].HeaderText = "생년월일";
 					dataGridView1.Columns[11].HeaderText = "메모";
-				
 		}
-
-
-
-
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
 			if (comboBoxNumber.Text == "")
@@ -182,9 +173,6 @@ namespace DWCareDocument
 				MessageBox.Show("시간을 입력하세요");
 				return;
 			}
-
-
-
 			try
 			{
 				string QuerySave = "insert into dawoon.dc_caredocument(careSeq,number,careStart,careFinish,time,sympton,count,injection,oral,age,birth,memo,flagYN,regDate,issueDate,issueID) values('"

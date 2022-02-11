@@ -80,17 +80,12 @@ namespace DWCareDocument
 			}
 			return "";
 		}
-
-		
-
-
 		public void buttonSearch_Click(object sender, EventArgs e)
 		{
-
-				string Connect = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";
+			  	string Connect = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";
 					string searchtext = textBoxSearch.Text.Trim();
 			  	string Query32 = "SELECT number,birth,careStart FROM dawoon.dc_caredocument WHERE NUMBER = '" + comboBoxNumber.Text + "';";
-			string field = "";
+		    	string field = "";
 					string flagYN = "";
 					string Query2 = "";
 					string Query4 = "";
@@ -98,6 +93,7 @@ namespace DWCareDocument
 					{
 						flagYN = "flagYN = 'N'";
 					}
+
 					else
 					{
 						flagYN = "flagYN = 'Y'";
@@ -121,11 +117,10 @@ namespace DWCareDocument
 				// 1. 키값을 가져와서 저장시켜야됨. 저장시키고 변수 선언
 				string birthString = rdr.GetString("birth");
 				string numberString = rdr.GetString("number");
-				string careStartString = rdr.GetString("careStart");
+			string careStartString = rdr.GetString("careStart");
 
 				dateTimePickerBirth.Text = birthString;
 			
-
 				DateTime cares = new DateTime();
 				DateTime birthd = new DateTime();
 				TimeSpan remain = new TimeSpan();

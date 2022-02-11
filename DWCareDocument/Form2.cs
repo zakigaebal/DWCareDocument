@@ -44,7 +44,7 @@ namespace DWCareDocument
 			try
 			{
 				string Connect = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
-				string Query = "SELECT MAX(accSeq)+1 AS seqMax FROM dawoon.dc_account;";
+				string Query = "SELECT MAX(careSeq)+1 AS seqMax FROM dawoon.dc_caredocument;";
 				MySqlConnection con = new MySqlConnection(Connect);
 				con.Open();
 				MySqlCommand cmd = new MySqlCommand(Query, con);
@@ -72,8 +72,7 @@ namespace DWCareDocument
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
 			string constring = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
-			string Query = "select COUNT(careSeq) cnt from dawoon.dc_caredocument WHERE number ='" + textBoxNumber.Text + "' AND birth = '"
-					+ dateTimePickerBirth.Text + "' AND flagYN ='Y';";
+			string Query = "select COUNT(careSeq) cnt from dawoon.dc_caredocument WHERE number ='" + textBoxNumber.Text + "' AND flagYN ='Y';";
 			MySqlConnection con3 = new MySqlConnection(constring);
 			MySqlCommand Comm3 = new MySqlCommand(Query, con3);
 			MySqlDataReader Read3;

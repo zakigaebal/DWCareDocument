@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.label13 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+			this.panelInput = new System.Windows.Forms.Panel();
 			this.tableLayoutPanelInput = new System.Windows.Forms.TableLayoutPanel();
 			this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
 			this.datetimepickeStart = new System.Windows.Forms.DateTimePicker();
@@ -49,33 +49,33 @@
 			this.textBoxInjection = new System.Windows.Forms.TextBox();
 			this.textBoxOral = new System.Windows.Forms.TextBox();
 			this.textBoxMemo = new System.Windows.Forms.TextBox();
-			this.panelInput = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.textBoxAge = new System.Windows.Forms.Label();
+			this.buttonEnroll = new System.Windows.Forms.Button();
+			this.tableLayoutPanelCRUD = new System.Windows.Forms.TableLayoutPanel();
+			this.buttonDelete = new System.Windows.Forms.Button();
+			this.buttonModify = new System.Windows.Forms.Button();
+			this.buttonSave = new System.Windows.Forms.Button();
 			this.comboBoxNumber = new System.Windows.Forms.ComboBox();
+			this.label9 = new System.Windows.Forms.Label();
 			this.dateTimePickerBirth = new System.Windows.Forms.DateTimePicker();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
 			this.panelSearch = new System.Windows.Forms.Panel();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
 			this.buttonSearch = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.tableLayoutPanelCRUD = new System.Windows.Forms.TableLayoutPanel();
-			this.buttonDelete = new System.Windows.Forms.Button();
-			this.buttonModify = new System.Windows.Forms.Button();
-			this.buttonSave = new System.Windows.Forms.Button();
-			this.buttonEnroll = new System.Windows.Forms.Button();
-			this.textBoxAge = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tableLayoutPanel4.SuspendLayout();
-			this.tableLayoutPanelInput.SuspendLayout();
 			this.panelInput.SuspendLayout();
-			this.panelSearch.SuspendLayout();
+			this.tableLayoutPanelInput.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.tableLayoutPanelCRUD.SuspendLayout();
+			this.panelSearch.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -96,16 +96,6 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1318, 447);
 			this.tableLayoutPanel1.TabIndex = 1;
-			// 
-			// label13
-			// 
-			this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(252, 17);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(137, 12);
-			this.label13.TabIndex = 13;
-			this.label13.Text = "질병 치료 대장 프로그램";
 			// 
 			// dataGridView1
 			// 
@@ -133,10 +123,19 @@
 			this.tableLayoutPanel4.Name = "tableLayoutPanel4";
 			this.tableLayoutPanel4.RowCount = 1;
 			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 394F));
+			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 394F));
 			this.tableLayoutPanel4.Size = new System.Drawing.Size(636, 394);
 			this.tableLayoutPanel4.TabIndex = 6;
+			// 
+			// panelInput
+			// 
+			this.panelInput.Controls.Add(this.tableLayoutPanelInput);
+			this.panelInput.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelInput.Location = new System.Drawing.Point(314, 3);
+			this.panelInput.Name = "panelInput";
+			this.panelInput.Size = new System.Drawing.Size(319, 388);
+			this.panelInput.TabIndex = 5;
 			// 
 			// tableLayoutPanelInput
 			// 
@@ -332,14 +331,90 @@
 			this.textBoxMemo.Size = new System.Drawing.Size(176, 103);
 			this.textBoxMemo.TabIndex = 15;
 			// 
-			// panelInput
+			// panel1
 			// 
-			this.panelInput.Controls.Add(this.tableLayoutPanelInput);
-			this.panelInput.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelInput.Location = new System.Drawing.Point(314, 3);
-			this.panelInput.Name = "panelInput";
-			this.panelInput.Size = new System.Drawing.Size(319, 388);
-			this.panelInput.TabIndex = 5;
+			this.panel1.Controls.Add(this.textBoxAge);
+			this.panel1.Controls.Add(this.buttonEnroll);
+			this.panel1.Controls.Add(this.tableLayoutPanelCRUD);
+			this.panel1.Controls.Add(this.comboBoxNumber);
+			this.panel1.Controls.Add(this.label9);
+			this.panel1.Controls.Add(this.dateTimePickerBirth);
+			this.panel1.Controls.Add(this.label11);
+			this.panel1.Controls.Add(this.label10);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(3, 3);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(305, 388);
+			this.panel1.TabIndex = 30;
+			// 
+			// textBoxAge
+			// 
+			this.textBoxAge.AutoSize = true;
+			this.textBoxAge.Location = new System.Drawing.Point(76, 72);
+			this.textBoxAge.Name = "textBoxAge";
+			this.textBoxAge.Size = new System.Drawing.Size(29, 12);
+			this.textBoxAge.TabIndex = 33;
+			this.textBoxAge.Text = "일령";
+			// 
+			// buttonEnroll
+			// 
+			this.buttonEnroll.Location = new System.Drawing.Point(219, 19);
+			this.buttonEnroll.Name = "buttonEnroll";
+			this.buttonEnroll.Size = new System.Drawing.Size(75, 39);
+			this.buttonEnroll.TabIndex = 32;
+			this.buttonEnroll.Text = "개체등록";
+			this.buttonEnroll.UseVisualStyleBackColor = true;
+			this.buttonEnroll.Click += new System.EventHandler(this.buttonEnroll_Click);
+			// 
+			// tableLayoutPanelCRUD
+			// 
+			this.tableLayoutPanelCRUD.ColumnCount = 3;
+			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanelCRUD.Controls.Add(this.buttonDelete, 2, 0);
+			this.tableLayoutPanelCRUD.Controls.Add(this.buttonModify, 1, 0);
+			this.tableLayoutPanelCRUD.Controls.Add(this.buttonSave, 0, 0);
+			this.tableLayoutPanelCRUD.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.tableLayoutPanelCRUD.Location = new System.Drawing.Point(0, 305);
+			this.tableLayoutPanelCRUD.Name = "tableLayoutPanelCRUD";
+			this.tableLayoutPanelCRUD.RowCount = 1;
+			this.tableLayoutPanelCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanelCRUD.Size = new System.Drawing.Size(305, 83);
+			this.tableLayoutPanelCRUD.TabIndex = 31;
+			// 
+			// buttonDelete
+			// 
+			this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.buttonDelete.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonDelete.Location = new System.Drawing.Point(205, 3);
+			this.buttonDelete.Name = "buttonDelete";
+			this.buttonDelete.Size = new System.Drawing.Size(97, 77);
+			this.buttonDelete.TabIndex = 2;
+			this.buttonDelete.Text = "삭제";
+			this.buttonDelete.UseVisualStyleBackColor = true;
+			// 
+			// buttonModify
+			// 
+			this.buttonModify.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.buttonModify.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonModify.Location = new System.Drawing.Point(104, 3);
+			this.buttonModify.Name = "buttonModify";
+			this.buttonModify.Size = new System.Drawing.Size(95, 77);
+			this.buttonModify.TabIndex = 1;
+			this.buttonModify.Text = "수정";
+			this.buttonModify.UseVisualStyleBackColor = true;
+			// 
+			// buttonSave
+			// 
+			this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.buttonSave.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonSave.Location = new System.Drawing.Point(3, 3);
+			this.buttonSave.Name = "buttonSave";
+			this.buttonSave.Size = new System.Drawing.Size(95, 77);
+			this.buttonSave.TabIndex = 0;
+			this.buttonSave.Text = "저장";
+			this.buttonSave.UseVisualStyleBackColor = true;
 			// 
 			// comboBoxNumber
 			// 
@@ -349,6 +424,15 @@
 			this.comboBoxNumber.Size = new System.Drawing.Size(134, 20);
 			this.comboBoxNumber.TabIndex = 29;
 			this.comboBoxNumber.SelectedIndexChanged += new System.EventHandler(this.comboBoxNumber_SelectedIndexChanged);
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(10, 35);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(53, 12);
+			this.label9.TabIndex = 1;
+			this.label9.Text = "개체번호";
 			// 
 			// dateTimePickerBirth
 			// 
@@ -379,15 +463,6 @@
 			this.label10.Size = new System.Drawing.Size(29, 12);
 			this.label10.TabIndex = 2;
 			this.label10.Text = "일령";
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(10, 35);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(53, 12);
-			this.label9.TabIndex = 1;
-			this.label9.Text = "개체번호";
 			// 
 			// panelSearch
 			// 
@@ -449,90 +524,15 @@
 			this.label12.TabIndex = 2;
 			this.label12.Text = "등록개체 수 :";
 			// 
-			// panel1
+			// label13
 			// 
-			this.panel1.Controls.Add(this.textBoxAge);
-			this.panel1.Controls.Add(this.buttonEnroll);
-			this.panel1.Controls.Add(this.tableLayoutPanelCRUD);
-			this.panel1.Controls.Add(this.comboBoxNumber);
-			this.panel1.Controls.Add(this.label9);
-			this.panel1.Controls.Add(this.dateTimePickerBirth);
-			this.panel1.Controls.Add(this.label11);
-			this.panel1.Controls.Add(this.label10);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(3, 3);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(305, 388);
-			this.panel1.TabIndex = 30;
-			// 
-			// tableLayoutPanelCRUD
-			// 
-			this.tableLayoutPanelCRUD.ColumnCount = 3;
-			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-			this.tableLayoutPanelCRUD.Controls.Add(this.buttonDelete, 2, 0);
-			this.tableLayoutPanelCRUD.Controls.Add(this.buttonModify, 1, 0);
-			this.tableLayoutPanelCRUD.Controls.Add(this.buttonSave, 0, 0);
-			this.tableLayoutPanelCRUD.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tableLayoutPanelCRUD.Location = new System.Drawing.Point(0, 305);
-			this.tableLayoutPanelCRUD.Name = "tableLayoutPanelCRUD";
-			this.tableLayoutPanelCRUD.RowCount = 1;
-			this.tableLayoutPanelCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanelCRUD.Size = new System.Drawing.Size(305, 83);
-			this.tableLayoutPanelCRUD.TabIndex = 31;
-			// 
-			// buttonDelete
-			// 
-			this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.buttonDelete.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonDelete.Location = new System.Drawing.Point(205, 3);
-			this.buttonDelete.Name = "buttonDelete";
-			this.buttonDelete.Size = new System.Drawing.Size(97, 77);
-			this.buttonDelete.TabIndex = 2;
-			this.buttonDelete.Text = "삭제";
-			this.buttonDelete.UseVisualStyleBackColor = true;
-			// 
-			// buttonModify
-			// 
-			this.buttonModify.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.buttonModify.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonModify.Location = new System.Drawing.Point(104, 3);
-			this.buttonModify.Name = "buttonModify";
-			this.buttonModify.Size = new System.Drawing.Size(95, 77);
-			this.buttonModify.TabIndex = 1;
-			this.buttonModify.Text = "수정";
-			this.buttonModify.UseVisualStyleBackColor = true;
-			// 
-			// buttonSave
-			// 
-			this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.buttonSave.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonSave.Location = new System.Drawing.Point(3, 3);
-			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.Size = new System.Drawing.Size(95, 77);
-			this.buttonSave.TabIndex = 0;
-			this.buttonSave.Text = "저장";
-			this.buttonSave.UseVisualStyleBackColor = true;
-			// 
-			// buttonEnroll
-			// 
-			this.buttonEnroll.Location = new System.Drawing.Point(219, 19);
-			this.buttonEnroll.Name = "buttonEnroll";
-			this.buttonEnroll.Size = new System.Drawing.Size(75, 39);
-			this.buttonEnroll.TabIndex = 32;
-			this.buttonEnroll.Text = "개체등록";
-			this.buttonEnroll.UseVisualStyleBackColor = true;
-			this.buttonEnroll.Click += new System.EventHandler(this.buttonEnroll_Click);
-			// 
-			// textBoxAge
-			// 
-			this.textBoxAge.AutoSize = true;
-			this.textBoxAge.Location = new System.Drawing.Point(76, 72);
-			this.textBoxAge.Name = "textBoxAge";
-			this.textBoxAge.Size = new System.Drawing.Size(29, 12);
-			this.textBoxAge.TabIndex = 33;
-			this.textBoxAge.Text = "일령";
+			this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label13.AutoSize = true;
+			this.label13.Location = new System.Drawing.Point(252, 17);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(137, 12);
+			this.label13.TabIndex = 13;
+			this.label13.Text = "질병 치료 대장 프로그램";
 			// 
 			// Form1
 			// 
@@ -547,14 +547,14 @@
 			this.tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.tableLayoutPanel4.ResumeLayout(false);
+			this.panelInput.ResumeLayout(false);
 			this.tableLayoutPanelInput.ResumeLayout(false);
 			this.tableLayoutPanelInput.PerformLayout();
-			this.panelInput.ResumeLayout(false);
-			this.panelSearch.ResumeLayout(false);
-			this.panelSearch.PerformLayout();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.tableLayoutPanelCRUD.ResumeLayout(false);
+			this.panelSearch.ResumeLayout(false);
+			this.panelSearch.PerformLayout();
 			this.ResumeLayout(false);
 
         }

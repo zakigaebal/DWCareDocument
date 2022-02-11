@@ -68,6 +68,7 @@
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
+			this.labelCountNb = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tableLayoutPanel4.SuspendLayout();
@@ -467,6 +468,7 @@
 			// 
 			// panelSearch
 			// 
+			this.panelSearch.Controls.Add(this.labelCountNb);
 			this.panelSearch.Controls.Add(this.checkBox2);
 			this.panelSearch.Controls.Add(this.checkBoxDelShow);
 			this.panelSearch.Controls.Add(this.buttonSearch);
@@ -481,7 +483,7 @@
 			// checkBox2
 			// 
 			this.checkBox2.AutoSize = true;
-			this.checkBox2.Location = new System.Drawing.Point(337, 9);
+			this.checkBox2.Location = new System.Drawing.Point(259, 10);
 			this.checkBox2.Name = "checkBox2";
 			this.checkBox2.Size = new System.Drawing.Size(76, 16);
 			this.checkBox2.TabIndex = 15;
@@ -491,7 +493,7 @@
 			// checkBoxDelShow
 			// 
 			this.checkBoxDelShow.AutoSize = true;
-			this.checkBoxDelShow.Location = new System.Drawing.Point(434, 9);
+			this.checkBoxDelShow.Location = new System.Drawing.Point(356, 10);
 			this.checkBoxDelShow.Name = "checkBoxDelShow";
 			this.checkBoxDelShow.Size = new System.Drawing.Size(76, 16);
 			this.checkBoxDelShow.TabIndex = 14;
@@ -511,9 +513,9 @@
 			// 
 			// textBoxSearch
 			// 
-			this.textBoxSearch.Location = new System.Drawing.Point(106, 7);
+			this.textBoxSearch.Location = new System.Drawing.Point(462, 13);
 			this.textBoxSearch.Name = "textBoxSearch";
-			this.textBoxSearch.Size = new System.Drawing.Size(100, 21);
+			this.textBoxSearch.Size = new System.Drawing.Size(71, 21);
 			this.textBoxSearch.TabIndex = 10;
 			// 
 			// label12
@@ -534,6 +536,15 @@
 			this.label13.Size = new System.Drawing.Size(137, 12);
 			this.label13.TabIndex = 13;
 			this.label13.Text = "질병 치료 대장 프로그램";
+			// 
+			// labelCountNb
+			// 
+			this.labelCountNb.AutoSize = true;
+			this.labelCountNb.Location = new System.Drawing.Point(99, 10);
+			this.labelCountNb.Name = "labelCountNb";
+			this.labelCountNb.Size = new System.Drawing.Size(77, 12);
+			this.labelCountNb.TabIndex = 16;
+			this.labelCountNb.Text = "등록개체 수 :";
 			// 
 			// Form1
 			// 
@@ -602,6 +613,7 @@
 		private System.Windows.Forms.Button buttonSave;
 		private System.Windows.Forms.Button buttonEnroll;
 		private System.Windows.Forms.Label textBoxAge;
+		private System.Windows.Forms.Label labelCountNb;
 	}
 }
 

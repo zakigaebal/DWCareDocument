@@ -21,7 +21,7 @@ namespace DWCareDocument
 		{
 			string Connect = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";		
 			string Query2 = "";
-			Query2 = "SELECT careSeq,number,birth,flagYN,regDate,issueDate,issueID FROM dc_caredocument WHERE " + "flagYN = 'Y'";
+			Query2 = "SELECT careSeq,number,birth,flagYN,regDate,issueDate,issueID FROM dc_careenroll WHERE " + "flagYN = 'Y'";
 			MySqlConnection con = new MySqlConnection(Connect);
 			con.Open();
 			MySqlCommand Comm = new MySqlCommand(Query2, con);
@@ -44,7 +44,7 @@ namespace DWCareDocument
 			try
 			{
 				string Connect = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
-				string Query = "SELECT MAX(careSeq)+1 AS seqMax FROM dawoon.dc_caredocument;";
+				string Query = "SELECT MAX(careSeq)+1 AS seqMax FROM dawoon.dc_careenroll;";
 				MySqlConnection con = new MySqlConnection(Connect);
 				con.Open();
 				MySqlCommand cmd = new MySqlCommand(Query, con);
@@ -72,7 +72,7 @@ namespace DWCareDocument
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
 			string constring = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
-			string Query = "select COUNT(careSeq) cnt from dawoon.dc_caredocument WHERE number ='" + textBoxNumber.Text + "' AND flagYN ='Y';";
+			string Query = "select COUNT(careSeq) cnt from dawoon.dc_careenroll WHERE number ='" + textBoxNumber.Text + "' AND flagYN ='Y';";
 			MySqlConnection con3 = new MySqlConnection(constring);
 			MySqlCommand Comm3 = new MySqlCommand(Query, con3);
 			MySqlDataReader Read3;
@@ -91,7 +91,7 @@ namespace DWCareDocument
 				{
 					// 지출인데 보너스가 없으면 보너스를 추가
 					string Connect = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
-					string QuerySave = "insert into dawoon.dc_caredocument(careSeq,number,birth,flagYN,regDate,issueDate,issueID) values('"
+					string QuerySave = "insert into dawoon.dc_careenroll(careSeq,number,birth,flagYN,regDate,issueDate,issueID) values('"
 							+ seqCount() + "','" + textBoxNumber.Text.Trim() + "','" + dateTimePickerBirth.Text
 							+ "','Y',now(),now(),'CDY')" + ";";
 					MySqlConnection con = new MySqlConnection(Connect);

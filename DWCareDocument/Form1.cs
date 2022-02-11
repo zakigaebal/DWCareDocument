@@ -134,7 +134,7 @@ namespace DWCareDocument
 			{
 				string cnt = rdr2.GetString("cnt");
 				// sub.Contains(subject2)
-				textBoxSearch.Text = cnt;
+				labelCountNb.Text = cnt;
 			}
 			rdr2.Close();
 

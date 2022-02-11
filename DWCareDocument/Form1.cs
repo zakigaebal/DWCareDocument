@@ -23,6 +23,8 @@ namespace DWCareDocument
 			연결(selectQuery);
 			comboBoxNumber.SelectedIndex = 0;
 		}
+	
+
 
 		private void 연결(string selectQuery)
 		{
@@ -54,7 +56,7 @@ namespace DWCareDocument
 			try
 			{
 				string Connect = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
-				string Query = "SELECT MAX(accSeq)+1 AS seqMax FROM dawoon.dc_account;";
+				string Query = "SELECT MAX(careSeq)+1 AS seqMax FROM dawoon.dc_caredocument;";
 				MySqlConnection con = new MySqlConnection(Connect);
 				con.Open();
 				MySqlCommand cmd = new MySqlCommand(Query, con);
@@ -82,24 +84,17 @@ namespace DWCareDocument
 		
 
 
-		private void buttonSearch_Click(object sender, EventArgs e)
+		public void buttonSearch_Click(object sender, EventArgs e)
 		{
-
-		
-	
-
-	
-
-
-
 
 				string Connect = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";
 					string searchtext = textBoxSearch.Text.Trim();
-			  	string Query32 = "SELECT birth FROM dawoon.dc_caredocument;";
-	  			string field = "";
+			  	string Query32 = "SELECT number,birth,careStart FROM dawoon.dc_caredocument WHERE NUMBER = '" + comboBoxNumber.Text + "';";
+			string field = "";
 					string flagYN = "";
 					string Query2 = "";
-					if (checkBoxDelShow.Checked == true)
+					string Query4 = "";
+			if (checkBoxDelShow.Checked == true)
 					{
 						flagYN = "flagYN = 'N'";
 					}
@@ -108,27 +103,49 @@ namespace DWCareDocument
 						flagYN = "flagYN = 'Y'";
 					}
 			// SELECT  accSeq, usedDate, dc_items.acount, dc_items.itemSeq, dc_items.subject, money, content, memo, dc_items.flagYN, dc_items.regDate, dc_items.issueDate, dc_items.issueID FROM dc_account LEFT JOIN dc_items ON dc_account.subject = dc_items.subject;
-			  Query32 = "SELECT number,birth FROM dawoon.dc_caredocument WHERE NUMBER = '+" + comboBoxNumber.Text + "';";
+			  Query32 = "SELECT number,birth,careStart FROM dawoon.dc_caredocument WHERE NUMBER = '" + comboBoxNumber.Text + "';";
 				Query2 = "SELECT * FROM dc_caredocument WHERE " + flagYN;
+		   	Query4 = "select COUNT(careSeq) cnt from dawoon.dc_caredocument WHERE flagYN ='Y';";
 					//  + field + "like '%" + searchtext + "'% AND " + flagYN;
 					//  " RIGHT JOIN dc_items 항목 ON (가계부.subject = 항목.subject) WHERE " + flagYN;
-					MySqlConnection con = new MySqlConnection(Connect);
+			MySqlConnection con = new MySqlConnection(Connect);
+
 			con.Open();
-					MySqlCommand Comm = new MySqlCommand(Query2, con);
-			MySqlCommand Comm32 = new MySqlCommand(Query32, con);
-			MySqlDataReader rdr = Comm32.ExecuteReader();
+			MySqlCommand Comm = new MySqlCommand(Query2, con);
+
+			MySqlCommand CommNumber = new MySqlCommand(Query32, con);
+			MySqlDataReader rdr = CommNumber.ExecuteReader();
+		
 			while (rdr.Read())
 			{
 				// 1. 키값을 가져와서 저장시켜야됨. 저장시키고 변수 선언
 				string birthString = rdr.GetString("birth");
 				string numberString = rdr.GetString("number");
+				string careStartString = rdr.GetString("careStart");
 
-			 dateTimePickerBirth.Text = birthString;
-				
-				
-				
+				dateTimePickerBirth.Text = birthString;
+			
+
+				DateTime cares = new DateTime();
+				DateTime birthd = new DateTime();
+				TimeSpan remain = new TimeSpan();
+				cares = Convert.ToDateTime(careStartString);
+				birthd = Convert.ToDateTime(birthString);
+				remain = cares - birthd;
+				textBoxAge.Text = remain.Days.ToString();
 			}
 			rdr.Close();
+
+	
+			MySqlCommand CommNumber2 = new MySqlCommand(Query4, con);
+			MySqlDataReader rdr2 = CommNumber2.ExecuteReader();
+			while (rdr2.Read())
+			{
+				string cnt = rdr2.GetString("cnt");
+				// sub.Contains(subject2)
+				textBoxSearch.Text = cnt;
+			}
+			rdr2.Close();
 
 			MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
 					MyAdapter.SelectCommand = Comm;
@@ -159,7 +176,13 @@ namespace DWCareDocument
 
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
-				if(textBoxTime.Text == "")
+			if (comboBoxNumber.Text == "")
+			{
+				MessageBox.Show("내용을 입력해주세요");
+				comboBoxNumber.Focus();
+				return;
+			}
+			else if (textBoxTime.Text == "")
 			{
 				MessageBox.Show("시간을 입력하세요");
 				return;
@@ -260,6 +283,12 @@ namespace DWCareDocument
 		private void comboBoxNumber_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			buttonSearch_Click(sender, e);
+		}
+
+		private void buttonEnroll_Click(object sender, EventArgs e)
+		{
+			Form2 newform2 = new Form2();
+			newform2.ShowDialog();
 		}
 	}
 }

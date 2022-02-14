@@ -98,9 +98,11 @@ namespace DWCareDocument
 					MessageBox.Show("저장완료");
 					clear();
 					buttonSearch_Click(sender, e);
-						
-					
-						
+
+					Form1 MainForm = (Form1)Owner;
+					//메인폼안에 있는 버튼서치메소드를 호출할 수 있다
+					MainForm.buttonSearch_Click(sender, e);
+
 				}
 		
 			}

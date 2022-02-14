@@ -62,13 +62,14 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.panelSearch = new System.Windows.Forms.Panel();
+			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
 			this.labelCountNb = new System.Windows.Forms.Label();
 			this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
 			this.buttonSearch = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
+			this.buttonFileSave = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tableLayoutPanel4.SuspendLayout();
@@ -88,7 +89,6 @@
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.panelSearch, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label13, 0, 0);
-			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
@@ -124,8 +124,8 @@
 			this.tableLayoutPanel4.Name = "tableLayoutPanel4";
 			this.tableLayoutPanel4.RowCount = 1;
 			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 394F));
-			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 394F));
+			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 428F));
+			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 428F));
 			this.tableLayoutPanel4.Size = new System.Drawing.Size(661, 428);
 			this.tableLayoutPanel4.TabIndex = 6;
 			// 
@@ -487,6 +487,19 @@
 			this.panelSearch.Size = new System.Drawing.Size(695, 84);
 			this.panelSearch.TabIndex = 12;
 			// 
+			// comboBoxSearch
+			// 
+			this.comboBoxSearch.FormattingEnabled = true;
+			this.comboBoxSearch.Items.AddRange(new object[] {
+            "개체번호",
+            "증상"});
+			this.comboBoxSearch.Location = new System.Drawing.Point(367, 14);
+			this.comboBoxSearch.Name = "comboBoxSearch";
+			this.comboBoxSearch.Size = new System.Drawing.Size(89, 20);
+			this.comboBoxSearch.TabIndex = 17;
+			this.comboBoxSearch.Text = "개체번호";
+			this.comboBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxSearch_KeyPress);
+			// 
 			// labelCountNb
 			// 
 			this.labelCountNb.AutoSize = true;
@@ -525,6 +538,7 @@
 			this.textBoxSearch.Size = new System.Drawing.Size(71, 21);
 			this.textBoxSearch.TabIndex = 10;
 			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+			this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
 			// 
 			// label12
 			// 
@@ -545,24 +559,22 @@
 			this.label13.TabIndex = 13;
 			this.label13.Text = "질병 치료 대장 프로그램";
 			// 
-			// comboBoxSearch
+			// buttonFileSave
 			// 
-			this.comboBoxSearch.FormattingEnabled = true;
-			this.comboBoxSearch.Items.AddRange(new object[] {
-            "개체번호",
-            "증상"});
-			this.comboBoxSearch.Location = new System.Drawing.Point(367, 14);
-			this.comboBoxSearch.Name = "comboBoxSearch";
-			this.comboBoxSearch.Size = new System.Drawing.Size(89, 20);
-			this.comboBoxSearch.TabIndex = 17;
-			this.comboBoxSearch.Text = "개체번호";
-			this.comboBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxSearch_KeyPress);
+			this.buttonFileSave.Location = new System.Drawing.Point(1100, 527);
+			this.buttonFileSave.Name = "buttonFileSave";
+			this.buttonFileSave.Size = new System.Drawing.Size(268, 63);
+			this.buttonFileSave.TabIndex = 2;
+			this.buttonFileSave.Text = "파일저장";
+			this.buttonFileSave.UseVisualStyleBackColor = true;
+			this.buttonFileSave.Click += new System.EventHandler(this.buttonFileSave_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1368, 524);
+			this.ClientSize = new System.Drawing.Size(1368, 599);
+			this.Controls.Add(this.buttonFileSave);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "Form1";
 			this.Text = "질병 치료 대장";
@@ -626,6 +638,7 @@
 		private System.Windows.Forms.Label labelAge;
 		private System.Windows.Forms.Label labelCountNb;
 		private System.Windows.Forms.ComboBox comboBoxSearch;
+		private System.Windows.Forms.Button buttonFileSave;
 	}
 }
 

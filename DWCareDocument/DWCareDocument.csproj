@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dwc.sql" />
+    <Content Include="enroll0211.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

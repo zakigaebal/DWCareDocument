@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -69,7 +64,7 @@ namespace DWCareDocument
 			return "";
 		}
 
-		private void buttonSave_Click(object sender, EventArgs e)
+		public void buttonSave_Click(object sender, EventArgs e)
 		{
 			string constring = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
 			string Query = "select COUNT(careSeq) cnt from dawoon.dc_careenroll WHERE number ='" + textBoxNumber.Text + "' AND flagYN ='Y';";
@@ -80,6 +75,7 @@ namespace DWCareDocument
 			Read3 = Comm3.ExecuteReader();
 			while (Read3.Read())
 			{
+				
 				string cnt = Read3.GetString("cnt");
 				if (Convert.ToInt32(cnt) > 0)
 				{
@@ -100,12 +96,20 @@ namespace DWCareDocument
 					con.Open();
 					Read = Comm.ExecuteReader();
 					MessageBox.Show("저장완료");
-
-					// 다른 폼에 있는 메소드를 호출시켜서
-					// 로드 자동으로 검색서치 되게만들기
-			
+					clear();
+					buttonSearch_Click(sender, e);
+						
+					
+						
 				}
+		
 			}
+		}
+
+		private void clear()
+		{
+			textBoxNumber.Text = "";
+			dateTimePickerBirth.Text = "";
 		}
 
 		private void Form2_Load(object sender, EventArgs e)

@@ -82,11 +82,11 @@
 			this.tableLayoutPanelCRUD.Controls.Add(this.buttonModify, 1, 0);
 			this.tableLayoutPanelCRUD.Controls.Add(this.buttonSave, 0, 0);
 			this.tableLayoutPanelCRUD.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tableLayoutPanelCRUD.Location = new System.Drawing.Point(0, 256);
+			this.tableLayoutPanelCRUD.Location = new System.Drawing.Point(0, 222);
 			this.tableLayoutPanelCRUD.Name = "tableLayoutPanelCRUD";
 			this.tableLayoutPanelCRUD.RowCount = 1;
 			this.tableLayoutPanelCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanelCRUD.Size = new System.Drawing.Size(790, 83);
+			this.tableLayoutPanelCRUD.Size = new System.Drawing.Size(790, 117);
 			this.tableLayoutPanelCRUD.TabIndex = 34;
 			// 
 			// buttonDelete
@@ -95,7 +95,7 @@
 			this.buttonDelete.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.buttonDelete.Location = new System.Drawing.Point(529, 3);
 			this.buttonDelete.Name = "buttonDelete";
-			this.buttonDelete.Size = new System.Drawing.Size(258, 77);
+			this.buttonDelete.Size = new System.Drawing.Size(258, 111);
 			this.buttonDelete.TabIndex = 2;
 			this.buttonDelete.Text = "삭제";
 			this.buttonDelete.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
 			this.buttonModify.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.buttonModify.Location = new System.Drawing.Point(266, 3);
 			this.buttonModify.Name = "buttonModify";
-			this.buttonModify.Size = new System.Drawing.Size(257, 77);
+			this.buttonModify.Size = new System.Drawing.Size(257, 111);
 			this.buttonModify.TabIndex = 1;
 			this.buttonModify.Text = "수정";
 			this.buttonModify.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
 			this.buttonSave.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.buttonSave.Location = new System.Drawing.Point(3, 3);
 			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.Size = new System.Drawing.Size(257, 77);
+			this.buttonSave.Size = new System.Drawing.Size(257, 111);
 			this.buttonSave.TabIndex = 0;
 			this.buttonSave.Text = "저장";
 			this.buttonSave.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
 			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(352, 33);
+			this.dataGridView1.Location = new System.Drawing.Point(354, 22);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 23;
@@ -147,7 +147,7 @@
 			this.buttonSearch.Dock = System.Windows.Forms.DockStyle.Right;
 			this.buttonSearch.Location = new System.Drawing.Point(659, 0);
 			this.buttonSearch.Name = "buttonSearch";
-			this.buttonSearch.Size = new System.Drawing.Size(131, 256);
+			this.buttonSearch.Size = new System.Drawing.Size(131, 222);
 			this.buttonSearch.TabIndex = 37;
 			this.buttonSearch.Text = "조회";
 			this.buttonSearch.UseVisualStyleBackColor = true;

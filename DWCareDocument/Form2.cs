@@ -14,24 +14,33 @@ namespace DWCareDocument
 		}
 		private void buttonSearch_Click(object sender, EventArgs e)
 		{
-			string Connect = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";		
-			string Query2 = "";
-			Query2 = "SELECT careSeq,number,birth,flagYN,regDate,issueDate,issueID FROM dc_careenroll WHERE " + "flagYN = 'Y'";
-			MySqlConnection con = new MySqlConnection(Connect);
-			con.Open();
-			MySqlCommand Comm = new MySqlCommand(Query2, con);
-			MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
-			MyAdapter.SelectCommand = Comm;
-			DataTable dTable = new DataTable();
-			MyAdapter.Fill(dTable);
-			dataGridView1.DataSource = dTable;
-			dataGridView1.Columns[0].Visible = false;
-			dataGridView1.Columns[dataGridView1.Columns.Count - 4].Visible = false;
-			dataGridView1.Columns[dataGridView1.Columns.Count - 3].Visible = false;
-			dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false;
-			dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false;
-			dataGridView1.Columns[1].HeaderText = "개체번호";
-			dataGridView1.Columns[2].HeaderText = "생일";
+			try
+			{
+				string Connect = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";
+				string Query2 = "";
+				Query2 = "SELECT careSeq,number,birth,flagYN,regDate,issueDate,issueID FROM dc_careenroll WHERE " + "flagYN = 'Y'";
+				MySqlConnection con = new MySqlConnection(Connect);
+				con.Open();
+				MySqlCommand Comm = new MySqlCommand(Query2, con);
+				MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+				MyAdapter.SelectCommand = Comm;
+				DataTable dTable = new DataTable();
+				MyAdapter.Fill(dTable);
+				dataGridView1.DataSource = dTable;
+				dataGridView1.Columns[0].Visible = false;
+				dataGridView1.Columns[dataGridView1.Columns.Count - 4].Visible = false;
+				dataGridView1.Columns[dataGridView1.Columns.Count - 3].Visible = false;
+				dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false;
+				dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false;
+				dataGridView1.Columns[1].HeaderText = "개체번호";
+				dataGridView1.Columns[2].HeaderText = "생일";
+			}
+			catch (Exception ex) { 
+			if(ex.Message.ToString() == "Unable to connect to any of the specified MySQL hosts.")
+				{
+					MessageBox.Show("데이터베이스가 없거나 실행되지않았습니다.");
+				}
+			}
 		}
 
 		private string seqCount()

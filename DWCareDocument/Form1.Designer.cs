@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,14 +63,14 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.panelSearch = new System.Windows.Forms.Panel();
+			this.buttonFileSave = new System.Windows.Forms.Button();
 			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
 			this.labelCountNb = new System.Windows.Forms.Label();
 			this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
 			this.buttonSearch = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
-			this.buttonFileSave = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tableLayoutPanel4.SuspendLayout();
@@ -78,6 +79,7 @@
 			this.panel1.SuspendLayout();
 			this.tableLayoutPanelCRUD.SuspendLayout();
 			this.panelSearch.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -88,7 +90,8 @@
 			this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.panelSearch, 1, 0);
-			this.tableLayoutPanel1.Controls.Add(this.label13, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
@@ -111,6 +114,7 @@
 			this.dataGridView1.Size = new System.Drawing.Size(695, 428);
 			this.dataGridView1.TabIndex = 11;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+			this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
 			// 
 			// tableLayoutPanel4
 			// 
@@ -475,6 +479,7 @@
 			// 
 			// panelSearch
 			// 
+			this.panelSearch.Controls.Add(this.buttonFileSave);
 			this.panelSearch.Controls.Add(this.comboBoxSearch);
 			this.panelSearch.Controls.Add(this.labelCountNb);
 			this.panelSearch.Controls.Add(this.checkBoxDelShow);
@@ -486,6 +491,16 @@
 			this.panelSearch.Name = "panelSearch";
 			this.panelSearch.Size = new System.Drawing.Size(695, 84);
 			this.panelSearch.TabIndex = 12;
+			// 
+			// buttonFileSave
+			// 
+			this.buttonFileSave.Location = new System.Drawing.Point(0, 0);
+			this.buttonFileSave.Name = "buttonFileSave";
+			this.buttonFileSave.Size = new System.Drawing.Size(73, 34);
+			this.buttonFileSave.TabIndex = 2;
+			this.buttonFileSave.Text = "파일저장";
+			this.buttonFileSave.UseVisualStyleBackColor = true;
+			this.buttonFileSave.Click += new System.EventHandler(this.buttonFileSave_Click);
 			// 
 			// comboBoxSearch
 			// 
@@ -503,7 +518,7 @@
 			// labelCountNb
 			// 
 			this.labelCountNb.AutoSize = true;
-			this.labelCountNb.Location = new System.Drawing.Point(99, 22);
+			this.labelCountNb.Location = new System.Drawing.Point(96, 53);
 			this.labelCountNb.Name = "labelCountNb";
 			this.labelCountNb.Size = new System.Drawing.Size(69, 12);
 			this.labelCountNb.TabIndex = 16;
@@ -512,7 +527,7 @@
 			// checkBoxDelShow
 			// 
 			this.checkBoxDelShow.AutoSize = true;
-			this.checkBoxDelShow.Location = new System.Drawing.Point(18, 55);
+			this.checkBoxDelShow.Location = new System.Drawing.Point(462, 49);
 			this.checkBoxDelShow.Name = "checkBoxDelShow";
 			this.checkBoxDelShow.Size = new System.Drawing.Size(72, 16);
 			this.checkBoxDelShow.TabIndex = 14;
@@ -543,44 +558,33 @@
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(16, 22);
+			this.label12.Location = new System.Drawing.Point(13, 53);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(77, 12);
 			this.label12.TabIndex = 2;
 			this.label12.Text = "등록개체 수 :";
 			// 
-			// label13
+			// pictureBox1
 			// 
-			this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(265, 39);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(137, 12);
-			this.label13.TabIndex = 13;
-			this.label13.Text = "질병 치료 대장 프로그램";
-			// 
-			// buttonFileSave
-			// 
-			this.buttonFileSave.Location = new System.Drawing.Point(1100, 527);
-			this.buttonFileSave.Name = "buttonFileSave";
-			this.buttonFileSave.Size = new System.Drawing.Size(268, 63);
-			this.buttonFileSave.TabIndex = 2;
-			this.buttonFileSave.Text = "파일저장";
-			this.buttonFileSave.UseVisualStyleBackColor = true;
-			this.buttonFileSave.Click += new System.EventHandler(this.buttonFileSave_Click);
+			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pictureBox1.Image = global::DWCareDocument.Properties.Resources.제목을_입력해주세요__복사본_001__1_;
+			this.pictureBox1.Location = new System.Drawing.Point(66, 3);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(534, 84);
+			this.pictureBox1.TabIndex = 13;
+			this.pictureBox1.TabStop = false;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1368, 599);
-			this.Controls.Add(this.buttonFileSave);
+			this.ClientSize = new System.Drawing.Size(1368, 547);
 			this.Controls.Add(this.tableLayoutPanel1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.Text = "질병 치료 대장";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
-			this.tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.tableLayoutPanel4.ResumeLayout(false);
 			this.panelInput.ResumeLayout(false);
@@ -591,6 +595,7 @@
 			this.tableLayoutPanelCRUD.ResumeLayout(false);
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -624,7 +629,6 @@
 		private System.Windows.Forms.Button buttonSearch;
 		private System.Windows.Forms.TextBox textBoxSearch;
 		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
 		private System.Windows.Forms.DateTimePicker datetimepickeStart;
 		private System.Windows.Forms.DateTimePicker dateTimePickerBirth;
@@ -639,6 +643,7 @@
 		private System.Windows.Forms.Label labelCountNb;
 		private System.Windows.Forms.ComboBox comboBoxSearch;
 		private System.Windows.Forms.Button buttonFileSave;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
 

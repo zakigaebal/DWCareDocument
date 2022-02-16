@@ -63,14 +63,15 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.panelSearch = new System.Windows.Forms.Panel();
-			this.buttonFileSave = new System.Windows.Forms.Button();
 			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
-			this.labelCountNb = new System.Windows.Forms.Label();
 			this.checkBoxDelShow = new System.Windows.Forms.CheckBox();
 			this.buttonSearch = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
-			this.label12 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.labelCountNb = new System.Windows.Forms.ToolStripButton();
+			this.buttonFileSave = new System.Windows.Forms.ToolStripButton();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tableLayoutPanel4.SuspendLayout();
@@ -80,6 +81,7 @@
 			this.tableLayoutPanelCRUD.SuspendLayout();
 			this.panelSearch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -479,28 +481,15 @@
 			// 
 			// panelSearch
 			// 
-			this.panelSearch.Controls.Add(this.buttonFileSave);
 			this.panelSearch.Controls.Add(this.comboBoxSearch);
-			this.panelSearch.Controls.Add(this.labelCountNb);
 			this.panelSearch.Controls.Add(this.checkBoxDelShow);
 			this.panelSearch.Controls.Add(this.buttonSearch);
 			this.panelSearch.Controls.Add(this.textBoxSearch);
-			this.panelSearch.Controls.Add(this.label12);
 			this.panelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelSearch.Location = new System.Drawing.Point(670, 3);
 			this.panelSearch.Name = "panelSearch";
 			this.panelSearch.Size = new System.Drawing.Size(695, 84);
 			this.panelSearch.TabIndex = 12;
-			// 
-			// buttonFileSave
-			// 
-			this.buttonFileSave.Location = new System.Drawing.Point(0, 0);
-			this.buttonFileSave.Name = "buttonFileSave";
-			this.buttonFileSave.Size = new System.Drawing.Size(73, 34);
-			this.buttonFileSave.TabIndex = 2;
-			this.buttonFileSave.Text = "파일저장";
-			this.buttonFileSave.UseVisualStyleBackColor = true;
-			this.buttonFileSave.Click += new System.EventHandler(this.buttonFileSave_Click);
 			// 
 			// comboBoxSearch
 			// 
@@ -508,26 +497,17 @@
 			this.comboBoxSearch.Items.AddRange(new object[] {
             "개체번호",
             "증상"});
-			this.comboBoxSearch.Location = new System.Drawing.Point(367, 14);
+			this.comboBoxSearch.Location = new System.Drawing.Point(396, 3);
 			this.comboBoxSearch.Name = "comboBoxSearch";
 			this.comboBoxSearch.Size = new System.Drawing.Size(89, 20);
 			this.comboBoxSearch.TabIndex = 17;
 			this.comboBoxSearch.Text = "개체번호";
 			this.comboBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxSearch_KeyPress);
 			// 
-			// labelCountNb
-			// 
-			this.labelCountNb.AutoSize = true;
-			this.labelCountNb.Location = new System.Drawing.Point(96, 53);
-			this.labelCountNb.Name = "labelCountNb";
-			this.labelCountNb.Size = new System.Drawing.Size(69, 12);
-			this.labelCountNb.TabIndex = 16;
-			this.labelCountNb.Text = "등록개체 수";
-			// 
 			// checkBoxDelShow
 			// 
 			this.checkBoxDelShow.AutoSize = true;
-			this.checkBoxDelShow.Location = new System.Drawing.Point(462, 49);
+			this.checkBoxDelShow.Location = new System.Drawing.Point(623, 65);
 			this.checkBoxDelShow.Name = "checkBoxDelShow";
 			this.checkBoxDelShow.Size = new System.Drawing.Size(72, 16);
 			this.checkBoxDelShow.TabIndex = 14;
@@ -537,10 +517,9 @@
 			// 
 			// buttonSearch
 			// 
-			this.buttonSearch.Dock = System.Windows.Forms.DockStyle.Right;
-			this.buttonSearch.Location = new System.Drawing.Point(564, 0);
+			this.buttonSearch.Location = new System.Drawing.Point(610, 2);
 			this.buttonSearch.Name = "buttonSearch";
-			this.buttonSearch.Size = new System.Drawing.Size(131, 84);
+			this.buttonSearch.Size = new System.Drawing.Size(85, 22);
 			this.buttonSearch.TabIndex = 13;
 			this.buttonSearch.Text = "조회";
 			this.buttonSearch.UseVisualStyleBackColor = true;
@@ -548,21 +527,12 @@
 			// 
 			// textBoxSearch
 			// 
-			this.textBoxSearch.Location = new System.Drawing.Point(462, 13);
+			this.textBoxSearch.Location = new System.Drawing.Point(491, 3);
 			this.textBoxSearch.Name = "textBoxSearch";
-			this.textBoxSearch.Size = new System.Drawing.Size(71, 21);
+			this.textBoxSearch.Size = new System.Drawing.Size(113, 21);
 			this.textBoxSearch.TabIndex = 10;
 			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
 			this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(13, 53);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(77, 12);
-			this.label12.TabIndex = 2;
-			this.label12.Text = "등록개체 수 :";
 			// 
 			// pictureBox1
 			// 
@@ -574,11 +544,53 @@
 			this.pictureBox1.TabIndex = 13;
 			this.pictureBox1.TabStop = false;
 			// 
+			// toolStrip1
+			// 
+			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.labelCountNb,
+            this.buttonFileSave});
+			this.toolStrip1.Location = new System.Drawing.Point(0, 541);
+			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.Size = new System.Drawing.Size(1368, 25);
+			this.toolStrip1.TabIndex = 2;
+			this.toolStrip1.Text = "toolStrip1";
+			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(86, 22);
+			this.toolStripButton1.Text = "등록개체 수 : ";
+			// 
+			// labelCountNb
+			// 
+			this.labelCountNb.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.labelCountNb.Image = ((System.Drawing.Image)(resources.GetObject("labelCountNb.Image")));
+			this.labelCountNb.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.labelCountNb.Name = "labelCountNb";
+			this.labelCountNb.Size = new System.Drawing.Size(75, 22);
+			this.labelCountNb.Text = "등록개체 수";
+			// 
+			// buttonFileSave
+			// 
+			this.buttonFileSave.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.buttonFileSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonFileSave.Image")));
+			this.buttonFileSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.buttonFileSave.Name = "buttonFileSave";
+			this.buttonFileSave.Size = new System.Drawing.Size(75, 22);
+			this.buttonFileSave.Text = "파일저장";
+			this.buttonFileSave.Click += new System.EventHandler(this.buttonFileSave_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1368, 547);
+			this.ClientSize = new System.Drawing.Size(1368, 566);
+			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
@@ -596,7 +608,10 @@
 			this.panelSearch.ResumeLayout(false);
 			this.panelSearch.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.toolStrip1.ResumeLayout(false);
+			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
@@ -628,7 +643,6 @@
 		private System.Windows.Forms.CheckBox checkBoxDelShow;
 		private System.Windows.Forms.Button buttonSearch;
 		private System.Windows.Forms.TextBox textBoxSearch;
-		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
 		private System.Windows.Forms.ComboBox comboBoxNumber;
 		private System.Windows.Forms.Panel panel1;
@@ -637,13 +651,15 @@
 		private System.Windows.Forms.Button buttonUpdate;
 		private System.Windows.Forms.Button buttonSave;
 		private System.Windows.Forms.Button buttonEnroll;
-		private System.Windows.Forms.Label labelCountNb;
 		private System.Windows.Forms.ComboBox comboBoxSearch;
-		private System.Windows.Forms.Button buttonFileSave;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		public System.Windows.Forms.Label labelAge;
 		public System.Windows.Forms.DateTimePicker datetimepickeStart;
 		public System.Windows.Forms.DateTimePicker dateTimePickerBirth;
+		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStripButton toolStripButton1;
+		private System.Windows.Forms.ToolStripButton labelCountNb;
+		private System.Windows.Forms.ToolStripButton buttonFileSave;
 	}
 }
 

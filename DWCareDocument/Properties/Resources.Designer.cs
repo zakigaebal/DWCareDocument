@@ -79,5 +79,15 @@ namespace DWCareDocument.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 제목을_입력해주세요__복사본_복사본_001 {
+            get {
+                object obj = ResourceManager.GetObject("제목을 입력해주세요__복사본_복사본-001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

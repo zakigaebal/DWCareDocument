@@ -28,12 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
 			this.label9 = new System.Windows.Forms.Label();
 			this.dateTimePickerBirth = new System.Windows.Forms.DateTimePicker();
 			this.label11 = new System.Windows.Forms.Label();
 			this.tableLayoutPanelCRUD = new System.Windows.Forms.TableLayoutPanel();
 			this.buttonDelete = new System.Windows.Forms.Button();
-			this.buttonModify = new System.Windows.Forms.Button();
+			this.buttonUpdate = new System.Windows.Forms.Button();
 			this.buttonSave = new System.Windows.Forms.Button();
 			this.textBoxNumber = new System.Windows.Forms.TextBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -45,7 +46,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(33, 63);
+			this.label9.Location = new System.Drawing.Point(25, 35);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(53, 12);
 			this.label9.TabIndex = 30;
@@ -57,7 +58,7 @@
 			this.dateTimePickerBirth.CalendarFont = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.dateTimePickerBirth.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.dateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePickerBirth.Location = new System.Drawing.Point(101, 121);
+			this.dateTimePickerBirth.Location = new System.Drawing.Point(95, 61);
 			this.dateTimePickerBirth.Name = "dateTimePickerBirth";
 			this.dateTimePickerBirth.Size = new System.Drawing.Size(134, 29);
 			this.dateTimePickerBirth.TabIndex = 32;
@@ -66,7 +67,7 @@
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(33, 134);
+			this.label11.Location = new System.Drawing.Point(25, 70);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(53, 12);
 			this.label11.TabIndex = 31;
@@ -79,37 +80,39 @@
 			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanelCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanelCRUD.Controls.Add(this.buttonDelete, 2, 0);
-			this.tableLayoutPanelCRUD.Controls.Add(this.buttonModify, 1, 0);
+			this.tableLayoutPanelCRUD.Controls.Add(this.buttonUpdate, 1, 0);
 			this.tableLayoutPanelCRUD.Controls.Add(this.buttonSave, 0, 0);
 			this.tableLayoutPanelCRUD.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tableLayoutPanelCRUD.Location = new System.Drawing.Point(0, 222);
+			this.tableLayoutPanelCRUD.Location = new System.Drawing.Point(0, 124);
 			this.tableLayoutPanelCRUD.Name = "tableLayoutPanelCRUD";
 			this.tableLayoutPanelCRUD.RowCount = 1;
 			this.tableLayoutPanelCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanelCRUD.Size = new System.Drawing.Size(790, 117);
+			this.tableLayoutPanelCRUD.Size = new System.Drawing.Size(608, 69);
 			this.tableLayoutPanelCRUD.TabIndex = 34;
 			// 
 			// buttonDelete
 			// 
 			this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.buttonDelete.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonDelete.Location = new System.Drawing.Point(529, 3);
+			this.buttonDelete.Location = new System.Drawing.Point(407, 3);
 			this.buttonDelete.Name = "buttonDelete";
-			this.buttonDelete.Size = new System.Drawing.Size(258, 111);
+			this.buttonDelete.Size = new System.Drawing.Size(198, 63);
 			this.buttonDelete.TabIndex = 2;
 			this.buttonDelete.Text = "삭제";
 			this.buttonDelete.UseVisualStyleBackColor = true;
+			this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
 			// 
-			// buttonModify
+			// buttonUpdate
 			// 
-			this.buttonModify.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.buttonModify.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.buttonModify.Location = new System.Drawing.Point(266, 3);
-			this.buttonModify.Name = "buttonModify";
-			this.buttonModify.Size = new System.Drawing.Size(257, 111);
-			this.buttonModify.TabIndex = 1;
-			this.buttonModify.Text = "수정";
-			this.buttonModify.UseVisualStyleBackColor = true;
+			this.buttonUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.buttonUpdate.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.buttonUpdate.Location = new System.Drawing.Point(205, 3);
+			this.buttonUpdate.Name = "buttonUpdate";
+			this.buttonUpdate.Size = new System.Drawing.Size(196, 63);
+			this.buttonUpdate.TabIndex = 1;
+			this.buttonUpdate.Text = "수정";
+			this.buttonUpdate.UseVisualStyleBackColor = true;
+			this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
 			// 
 			// buttonSave
 			// 
@@ -117,7 +120,7 @@
 			this.buttonSave.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.buttonSave.Location = new System.Drawing.Point(3, 3);
 			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.Size = new System.Drawing.Size(257, 111);
+			this.buttonSave.Size = new System.Drawing.Size(196, 63);
 			this.buttonSave.TabIndex = 0;
 			this.buttonSave.Text = "저장";
 			this.buttonSave.UseVisualStyleBackColor = true;
@@ -125,7 +128,7 @@
 			// 
 			// textBoxNumber
 			// 
-			this.textBoxNumber.Location = new System.Drawing.Point(101, 60);
+			this.textBoxNumber.Location = new System.Drawing.Point(95, 32);
 			this.textBoxNumber.Name = "textBoxNumber";
 			this.textBoxNumber.Size = new System.Drawing.Size(134, 21);
 			this.textBoxNumber.TabIndex = 35;
@@ -135,19 +138,20 @@
 			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(354, 22);
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Right;
+			this.dataGridView1.Location = new System.Drawing.Point(398, 0);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 23;
-			this.dataGridView1.Size = new System.Drawing.Size(227, 183);
+			this.dataGridView1.Size = new System.Drawing.Size(210, 124);
 			this.dataGridView1.TabIndex = 36;
+			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
 			// buttonSearch
 			// 
-			this.buttonSearch.Dock = System.Windows.Forms.DockStyle.Right;
-			this.buttonSearch.Location = new System.Drawing.Point(659, 0);
+			this.buttonSearch.Location = new System.Drawing.Point(255, 32);
 			this.buttonSearch.Name = "buttonSearch";
-			this.buttonSearch.Size = new System.Drawing.Size(131, 222);
+			this.buttonSearch.Size = new System.Drawing.Size(131, 58);
 			this.buttonSearch.TabIndex = 37;
 			this.buttonSearch.Text = "조회";
 			this.buttonSearch.UseVisualStyleBackColor = true;
@@ -157,7 +161,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(790, 339);
+			this.ClientSize = new System.Drawing.Size(608, 193);
 			this.Controls.Add(this.buttonSearch);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.textBoxNumber);
@@ -165,8 +169,10 @@
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.dateTimePickerBirth);
 			this.Controls.Add(this.label11);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
 			this.Name = "Form2";
-			this.Text = "Form2";
+			this.Text = "개체등록";
 			this.Load += new System.EventHandler(this.Form2_Load);
 			this.tableLayoutPanelCRUD.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -181,7 +187,7 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCRUD;
 		private System.Windows.Forms.Button buttonDelete;
-		private System.Windows.Forms.Button buttonModify;
+		private System.Windows.Forms.Button buttonUpdate;
 		private System.Windows.Forms.Button buttonSave;
 		private System.Windows.Forms.TextBox textBoxNumber;
 		private System.Windows.Forms.DataGridView dataGridView1;

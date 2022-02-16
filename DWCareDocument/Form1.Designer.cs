@@ -567,7 +567,7 @@
 			// pictureBox1
 			// 
 			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pictureBox1.Image = global::DWCareDocument.Properties.Resources.제목을_입력해주세요__복사본_001__1_;
+			this.pictureBox1.Image = global::DWCareDocument.Properties.Resources.제목을_입력해주세요__복사본_복사본_001;
 			this.pictureBox1.Location = new System.Drawing.Point(66, 3);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(534, 84);
@@ -630,8 +630,6 @@
 		private System.Windows.Forms.TextBox textBoxSearch;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
-		private System.Windows.Forms.DateTimePicker datetimepickeStart;
-		private System.Windows.Forms.DateTimePicker dateTimePickerBirth;
 		private System.Windows.Forms.ComboBox comboBoxNumber;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCRUD;
@@ -639,11 +637,13 @@
 		private System.Windows.Forms.Button buttonUpdate;
 		private System.Windows.Forms.Button buttonSave;
 		private System.Windows.Forms.Button buttonEnroll;
-		private System.Windows.Forms.Label labelAge;
 		private System.Windows.Forms.Label labelCountNb;
 		private System.Windows.Forms.ComboBox comboBoxSearch;
 		private System.Windows.Forms.Button buttonFileSave;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		public System.Windows.Forms.Label labelAge;
+		public System.Windows.Forms.DateTimePicker datetimepickeStart;
+		public System.Windows.Forms.DateTimePicker dateTimePickerBirth;
 	}
 }
 

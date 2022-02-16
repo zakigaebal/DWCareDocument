@@ -136,6 +136,7 @@
   <ItemGroup>
     <Content Include="dwc.sql" />
     <Content Include="enroll0211.sql" />
+    <None Include="Resources\제목을 입력해주세요__복사본_복사본-001.png" />
     <None Include="Resources\제목을 입력해주세요__복사본-001 %281%29.png" />
     <None Include="Resources\제목을 입력해주세요__복사본-001.png" />
   </ItemGroup>

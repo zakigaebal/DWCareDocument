@@ -27,7 +27,7 @@ namespace DWCareDocument
 				DateTime dateEnd = DateTime.Now;
 				datetimepickeStart.Value = dateEnd;
 
-				
+
 				dateTimePickerEnd.Value = dateStart;
 
 
@@ -116,6 +116,51 @@ namespace DWCareDocument
 			return "";
 		}
 
+		private string getNumber(string txt)
+		{
+			try
+			{
+				string Connect = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";
+				string Query = "SELECT number FROM dc_careenroll where number = '" + txt + "';";
+				MySqlConnection con = new MySqlConnection(Connect);
+				con.Open();
+				MySqlCommand cmd = new MySqlCommand(Query, con);
+				MySqlDataReader rdr = cmd.ExecuteReader();
+				while (rdr.Read())
+				{
+					return rdr["number"].ToString();
+				}
+				rdr.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			return "";
+		}
+
+		private string getenrollSeq(string txt)
+		{
+			try
+			{
+				string Connect = "datasource=127.0.0.1;port=3306;username=root;password=ekdnsel;Charset=utf8";
+				string Query = "SELECT enrollSeq FROM dawoon.dc_careenroll where number = '" + txt + "';";
+				MySqlConnection con = new MySqlConnection(Connect);
+				con.Open();
+				MySqlCommand cmd = new MySqlCommand(Query, con);
+				MySqlDataReader rdr = cmd.ExecuteReader();
+				while (rdr.Read())
+				{
+					return rdr["enrollSeq"].ToString();
+				}
+				rdr.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			return "";
+		}
 
 		public void buttonSearch_Click(object sender, EventArgs e)
 		{
@@ -126,28 +171,31 @@ namespace DWCareDocument
 				string field = "";
 				string keyText = comboBoxSearch.Text;
 				string flagYN = "";
+
 				string QuerySelect = "";
-				string QuerySelect2 = "";
+
 
 				string QueryCount = "";
 				string QueryBirth = "";
 
-				if (keyText == "개체번호") field = "number ";
-				else if (keyText == "증상") field = "sympton ";
+				if (keyText == "개체번호") field = "문서.number ";
+				else if (keyText == "증상") field = "문서.sympton ";
 
 				if (checkBoxDelShow.Checked == true)
 				{
-					flagYN = "flagYN = 'N'";
+					flagYN = "문서.flagYN = 'N'";
 				}
 				else
 				{
-					flagYN = "flagYN = 'Y'";
+					flagYN = "문서.flagYN = 'Y'";
 				}
 				// SELECT  accSeq, usedDate, dc_items.acount, dc_items.itemSeq, dc_items.subject, money, content, memo, dc_items.flagYN, dc_items.regDate, dc_items.issueDate, dc_items.issueID FROM dc_account LEFT JOIN dc_items ON dc_account.subject = dc_items.subject;
 				// Query32 = "SELECT number,birth FROM dawoon.dc_careenroll WHERE NUMBER = '" + comboBoxNumber.Text + "';";
 				QueryBirth = "SELECT 등록.number, 등록.birth, 문서.careStart FROM dawoon.dc_caredocument 문서 RIGHT JOIN dawoon.dc_careenroll 등록 ON (등록.number = 문서.number) WHERE 등록.number  = '" + comboBoxNumber.Text + "';";
-				QuerySelect = "SELECT * FROM dc_caredocument WHERE " + field + "like '" + "%" + searchtext + "%" + "' AND " + flagYN;
-				QuerySelect2 = "SELECT 등록.careSeq, 문서.number, 문서.careStart, 문서.careFinish, 문서.time, 문서.sympton, 문서.count, 문서.injection, 문서.oral, 문서.age, 등록.birth, 문서.memo, 문서.flagYN, 문서.regDate, 문서.issueDate, 문서.issueID FROM dc_careenroll 등록 RIGHT JOIN dc_caredocument 문서 ON(등록.number = 문서.number); ";
+
+
+
+				QuerySelect = "SELECT 문서.careSeq, 등록.number, 문서.careStart, 문서.careFinish, 문서.time, 문서.sympton, 문서.count, 문서.injection, 문서.oral, 등록.enrollSeq, 문서.age, 등록.birth, 문서.memo, 문서.flagYN, 문서.regDate, 문서.issueDate, 문서.issueID FROM dc_careenroll 등록 RIGHT JOIN dc_caredocument 문서 ON(등록.enrollSeq = 문서.enrollSeq) WHERE " + field + "like '" + "%" + searchtext + "%" + "' AND " + flagYN;
 
 
 				// 쿼리에 개체등록테이블에서 생년월일을 join시켜야됨
@@ -156,7 +204,7 @@ namespace DWCareDocument
 				//  " RIGHT JOIN dc_items 항목 ON (가계부.subject = 항목.subject) WHERE " + flagYN;
 				MySqlConnection con = new MySqlConnection(Connect);
 				con.Open();
-				MySqlCommand Comm = new MySqlCommand(QuerySelect2, con);
+				MySqlCommand Comm = new MySqlCommand(QuerySelect, con);
 				MySqlCommand CommNumber = new MySqlCommand(QueryBirth, con);
 				MySqlDataReader rdr = CommNumber.ExecuteReader();
 
@@ -204,6 +252,8 @@ namespace DWCareDocument
 				MyAdapter.Fill(dTable);
 				dataGridView1.DataSource = dTable;
 				dataGridView1.Columns[0].Visible = false;
+
+
 				dataGridView1.Columns[dataGridView1.Columns.Count - 4].Visible = false;
 				dataGridView1.Columns[dataGridView1.Columns.Count - 3].Visible = false;
 				dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false;
@@ -217,12 +267,14 @@ namespace DWCareDocument
 				dataGridView1.Columns[6].HeaderText = "횟수";
 				dataGridView1.Columns[7].HeaderText = "주사처방(M)";
 				dataGridView1.Columns[8].HeaderText = "경구투여";
-				dataGridView1.Columns[9].HeaderText = "일령";
-				dataGridView1.Columns[10].HeaderText = "생년월일";
-				dataGridView1.Columns[11].HeaderText = "메모";
+				dataGridView1.Columns[9].HeaderText = "등록번호";
+				dataGridView1.Columns[10].HeaderText = "일령";
+				dataGridView1.Columns[11].HeaderText = "생년월일";
+				dataGridView1.Columns[12].HeaderText = "메모";
 			}
 			catch (Exception ex) { }
 		}
+
 
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
@@ -232,11 +284,13 @@ namespace DWCareDocument
 				comboBoxNumber.Focus();
 				return;
 			}
+
 			else if (textBoxTime.Text == "")
 			{
 				MessageBox.Show("시간을 입력하세요");
 				return;
 			}
+
 			try
 			{
 				string birthString = dateTimePickerBirth.Text;
@@ -249,9 +303,9 @@ namespace DWCareDocument
 				birthd = Convert.ToDateTime(birthString);
 				remain = cares - birthd;
 
-				string QuerySave = "insert into dawoon.dc_caredocument(careSeq,number,careStart,careFinish,time,sympton,count,injection,oral,age,birth,memo,flagYN,regDate,issueDate,issueID) values('"
+				string QuerySave = "insert into dawoon.dc_caredocument(careSeq,number,careStart,careFinish,time,sympton,count,injection,oral,age,enrollSeq,birth,memo,flagYN,regDate,issueDate,issueID) values('"
 				+ seqCount() + "','"
-				+ comboBoxNumber.Text + "','"
+				+ getNumber(comboBoxNumber.Text) + "','"
 				+ datetimepickeStart.Text + "','"
 				+ dateTimePickerEnd.Text + "','"
 				+ textBoxTime.Text + "','"
@@ -260,17 +314,19 @@ namespace DWCareDocument
 				+ textBoxInjection.Text + "','"
 				+ textBoxOral.Text + "','"
 				+ remain + "','"
+				+ getenrollSeq(comboBoxNumber.Text) + "','"
 				+ getBirth(comboBoxNumber.Text) + "','"
 				+ textBoxMemo.Text
 				+ "','Y',now(),now(),'CDY');";
+
 				CrudSql(QuerySave, "저장완료");
 				buttonSearch_Click(sender, e);
 				clear();
 			}
 
+
 			catch (Exception ex)
 			{
-
 			}
 		}
 
@@ -282,10 +338,14 @@ namespace DWCareDocument
 				textBoxCount.Focus();
 				return;
 			}
+
+
 			try
 			{
+
 				string birthString = dateTimePickerBirth.Text;
 				string careStartString = datetimepickeStart.Text;
+
 
 				DateTime cares = new DateTime();
 				DateTime birthd = new DateTime();
@@ -294,10 +354,11 @@ namespace DWCareDocument
 				birthd = Convert.ToDateTime(birthString);
 				remain = cares - birthd;
 
+
 				string seqstr = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
 				string QueryUpdate = "update dawoon.dc_caredocument AS 문서 RIGHT JOIN dawoon.dc_careenroll AS 등록 " +
 					"ON (문서.number = 등록.number)" +
-					"SET 문서.careSeq='" + seqstr +
+					"SET 등록.enrollSeq='" + seqstr +
 					"',문서.careStart='" + datetimepickeStart.Text +
 					"',문서.careFinish='" + dateTimePickerEnd.Text +
 					"',문서.time='" + textBoxTime.Text +
@@ -307,12 +368,13 @@ namespace DWCareDocument
 					"',문서.oral='" + textBoxOral.Text +
 					"',문서.age='" + remain +
 					"',등록.birth='" + dateTimePickerBirth.Text +
-					"',문서.memo='" + textBoxMemo.Text + "' where 문서.careSeq='" + seqstr + "';";
+					"',문서.memo='" + textBoxMemo.Text + "' where 등록.enrollSeq='" + seqstr + "';";
 				CrudSql(QueryUpdate, "수정완료");
 				clear();
 				buttonSearch_Click(sender, e);
 				buttonSave.Enabled = true;
 				buttonUpdate.Enabled = false;
+
 
 			}
 			catch (Exception ex)
@@ -320,6 +382,8 @@ namespace DWCareDocument
 				MessageBox.Show(ex.Message);
 			}
 		}
+
+
 
 
 		private void textBoxTime_TextChanged(object sender, EventArgs e)
@@ -364,39 +428,43 @@ namespace DWCareDocument
 			prevValue = textBox.Text;
 		}
 
+
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.RowIndex < 0)
+			try
 			{
-				return;
+				if (e.RowIndex < 0)
+				{
+					return;
+				}
+				comboBoxNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+				datetimepickeStart.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+				dateTimePickerEnd.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+				textBoxTime.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+				textBoxSympton.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+				textBoxCount.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+				textBoxInjection.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+				textBoxOral.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+				labelAge.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+				dateTimePickerBirth.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+				textBoxMemo.Text = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
 			}
-			comboBoxNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-			datetimepickeStart.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-			dateTimePickerEnd.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-			textBoxTime.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-			textBoxSympton.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-			textBoxCount.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-			textBoxInjection.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-			textBoxOral.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-			labelAge.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-			dateTimePickerBirth.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
-			textBoxMemo.Text = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
-
+			catch (Exception ex) { }
 
 		}
 
 		private void comboBoxNumber_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			ageChanger();
-
-
 		}
+
 
 		private void buttonEnroll_Click(object sender, EventArgs e)
 		{
 			Form2 newform2 = new Form2();
 			newform2.ShowDialog(this);
 		}
+
 
 		private void ageChanger()
 		{
@@ -448,6 +516,8 @@ namespace DWCareDocument
 			comboBoxNumber.Items.Clear();
 			string selectQuery = "";
 			연결(selectQuery);
+
+			buttonSave.Enabled = true;
 		}
 		private void clear()
 		{
@@ -552,7 +622,7 @@ namespace DWCareDocument
 			// header가 true면 헤더정보 출력
 			if (headerText)
 			{
-				for (int i = 1; i < dataGridView1.Columns.Count-4; i++)
+				for (int i = 1; i < dataGridView1.Columns.Count - 4; i++)
 				{
 					csvExport.Write(dataGridView1.Columns[i].HeaderText);
 					if (i != dataGridView1.Columns.Count - 1)
@@ -569,7 +639,7 @@ namespace DWCareDocument
 			{
 				if (!row.IsNewRow)
 				{
-					for (int i = 1; i < dataGridView1.Columns.Count-4; i++)
+					for (int i = 1; i < dataGridView1.Columns.Count - 4; i++)
 					{
 						csvExport.Write(row.Cells[i].Value);
 						if (i != dataGridView1.Columns.Count - 1)
@@ -580,7 +650,7 @@ namespace DWCareDocument
 					csvExport.Write(csvExport.NewLine); // write new line
 				}
 			}
-			
+
 
 
 			csvExport.Flush();
@@ -610,6 +680,21 @@ namespace DWCareDocument
 
 			return saveDialog;
 		}
+
+		public void 일령불러오기()
+		{
+			try
+			{
+
+			
+
+
+
+
+			}
+			catch (Exception ex) { }
+		}
+
 
 		private void dataGridView1_Click(object sender, EventArgs e)
 		{
